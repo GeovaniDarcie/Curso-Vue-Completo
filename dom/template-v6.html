@@ -1,0 +1,14 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+    <p v-html="linkHtml"></p>
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            linkHtml: '<a href="http://google.com.br">Google</a>'
+        }
+    })
+</script>

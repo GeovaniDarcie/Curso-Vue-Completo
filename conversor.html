@@ -1,0 +1,29 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+    <input type="text" v-model="pesoK" v-on:input="converterQuilos()"> <label>Kg</label>
+    <br>
+    <br>
+    <input type="text" v-model="pesoG" v-on:input="converterGramas()"> <label>g</label>
+</div>
+
+
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            pesoK: "",
+            pesoG: ""
+        },
+
+        methods: {
+            converterQuilos(){
+                this.pesoG = this.pesoK * 1000
+            },
+
+            converterGramas(){
+                this.pesoK = this.pesoG / 1000
+            }
+        }
+    })
+</script>
