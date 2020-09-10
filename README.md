@@ -3,14 +3,14 @@ Esse manual foi feito por mim com base no curso da Udemy:
 > [Curso completo da udemy](https://www.udemy.com/course/vue-js-completo/). :mortar_board:
 
 ## Índice
-* [Hello World](#ancora)
-* [Usando Funcao](#usando-funcao)
+* [Hello World](#ancora1)
+* [Usando Funcao](#ancora2)
 * [Entendendo o this](#entendendo-o-this)
 * [Diretiva v bind](#diretiva-v-bind)
 * [Diretiva v-on](#diretiva-v-on)
 * [Diretiva v-html](#diretiva-v-html)
 
-<a id="hello-world></a>
+<a id="ancora1"></a>
 ## Hello World :raised_hand:
 
 > Uma forma de usar o Vue, é copiando a tag script da [documentação](https://vuejs.org/v2/guide/) e colando no seu documento.
@@ -39,7 +39,7 @@ Esse manual foi feito por mim com base no curso da Udemy:
 ```
 **[⬆ Voltar para o índice](#índice)**
 
-<a id="usando-funcao></a>
+<a id="ancora2"></a>
 ## Usando Funcao :wrench:
 
 > Um atributo **methods** adicionado ao Vue para adicionar minhas funções (ou métodos), repare que em **data** eu abro um objeto, a mesma coisa em **methods**
