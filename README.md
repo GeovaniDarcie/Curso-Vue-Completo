@@ -46,7 +46,7 @@ Esse manual foi feito por mim com base no curso da Udemy:
 ```
 
 **[⬆ Voltar para o índice](#índice)**
-## Agora utilizando Vue:
+### Agora utilizando Vue:
 
 ```html
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
