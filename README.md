@@ -10,6 +10,7 @@ Esse manual foi feito por mim com base no curso da Udemy:
 * [Diretiva v-on](#diretiva-v-on)
 * [Diretiva v-html](#diretiva-v-html)
 
+<a id="hello-world></a>
 ## Hello World :raised_hand:
 
 > Uma forma de usar o Vue, é copiando a tag script da [documentação](https://vuejs.org/v2/guide/) e colando no seu documento.
