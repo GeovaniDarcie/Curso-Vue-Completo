@@ -2,7 +2,9 @@
 
 ## Primeiro exemplo
 
-``` <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> <!-- Importando o Vue JS -->
+```javascript
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> <!-- Importando o Vue JS -->
 
 <div id="app">
     <p>{{ title }} </p> <!-- Pegando o title da minha minha Vue, uso {{}} -->
@@ -24,7 +26,9 @@
 
 **Em javascript padrão como seria:**
 
-``` <input type="text" onkeypress="alteraTitulo(event)">
+```javascript
+
+<input type="text" onkeypress="alteraTitulo(event)">
 <p id="title">Curso Vue</p>
 
 <script>
@@ -38,7 +42,8 @@
 
 **Agora usando Vue:** 
 
-``` <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+```javascript 
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
 <div id="app">
     <input type="text" v-on:input="alteraTitulo">
