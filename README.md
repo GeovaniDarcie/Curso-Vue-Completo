@@ -4,9 +4,9 @@ Esse manual foi feito por mim com base no curso da Udemy:
 
 ## Índice
 * [Hello World](#hello-world)
-* [Usando Função](#usando-função)
+* [Usando Funcao](#usando-funcao)
 * [Entendendo o this](#entendendo-o-this)
-* [Diretiva v-bind](#diretiva-v-bind)
+* [Diretiva v bind](#diretiva-v-bind)
 * [Diretiva v-on](#diretiva-v-on)
 * [Diretiva v-html](#diretiva-v-html)
 
@@ -38,7 +38,7 @@ Esse manual foi feito por mim com base no curso da Udemy:
 ```
 **[⬆ Voltar para o índice](#índice)**
 
-## Usando Função :wrench:
+## Usando Funcao :wrench:
 
 > Um atributo **methods** adicionado ao Vue para adicionar minhas funções (ou métodos), repare que em **data** eu abro um objeto, a mesma coisa em **methods**
 
@@ -94,7 +94,7 @@ Esse manual foi feito por mim com base no curso da Udemy:
 ```
 
 
-## Diretiva v-bind  :wrench:
+## Diretiva v bind  :wrench:
 
 > O HTML permite que eu crie propriedades personalizadas, o Vue usou isso para criar as suas próprias e chamou isso de **diretivas**, ex: **v-bind**, **v-model**, etc.
 
