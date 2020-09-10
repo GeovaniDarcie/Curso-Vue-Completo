@@ -5,7 +5,10 @@ Esse manual foi feito por mim com base no curso da Udemy:
 ## Índice
 * [Hello World](#hello-world)
 * [Usando Função](#usando-função)
-* [Eventos com Input](#eventos-com-input)
+* [Entendendo o this](#entendendo-o-this)
+* [Diretiva v-bind](#diretiva-v-bind)
+* [Diretiva v-on](#diretiva-v-on)
+* [Diretiva v-html](#diretiva-v-html)
 
 ## Hello World :raised_hand:
 
@@ -143,8 +146,117 @@ Esse manual foi feito por mim com base no curso da Udemy:
 </script>
 ```
 
+## Diretiva v-html  :wrench:
 
+> **v-html** Posso passar código HTML através de um atributo no Vue.
 
+```html
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+    <p v-html="linkHtml"></p>
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            linkHtml: '<a href="http://google.com.br">Google</a>'
+        }
+    })
+</script>
+```
+
+## Evento v-on:click  :wrench:
+
+> **v-on:click** Ao ser clicado o elemento dispara uma função.
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+    <p>{{ contador }}</p>
+    <button v-on:click="somar">Somar 1</button>
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            contador: 0
+        },
+        methods: {
+            somar(){
+                this.contador++
+            }
+        }
+    })
+</script>
+```
+
+## Evento v-on:mousemove  :wrench:
+
+> **v-on:mousemove** Ao passar o mouse em cima da tag `<p>`, é mostrado a posição do mouse.
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+    <p>{{ contador }}</p>
+    <button v-on:click="somar">Somar 1</button>
+    <p v-on:mousemove="atualizarXY"> Mouse: {{x}} e {{y}}</p>
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            contador: 0,
+            x: 0,
+            y: 0
+        },
+        methods: {
+            somar(){
+                this.contador++
+            },
+
+            atualizarXY(event){
+                console.log(event)
+                this.x = event.clientX
+                this.y = event.clientY
+            }
+        }
+    })
+</script>
+```
+
+## Parâmetro event  :wrench:
+
+> Por padrão o Vue já reconhece o parâmetro event, posso usar sem passar nada na função `<button v-on:click="somar"` mas se eu passar outro parâmetro para a função e ainda sim quiser usar o evento, eu preciso usar o event assim `$event` com dólar na frente e o nome obrigatoriamente precisa ser **event**.
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+    <p>{{ contador }}</p>
+    <button v-on:click="somar(5, $event)">Somar 1</button>
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            contador: 0,
+        },
+        methods: {
+            somar(passo, ev){
+                console.log(passo, ev)
+                this.contador += passo
+            },
+        }
+    })
+</script>
+```
 
 ## Eventos com input
 ### Utilizando Javascript Puro:
