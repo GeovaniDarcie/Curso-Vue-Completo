@@ -3,7 +3,7 @@ Esse manual foi feito por mim com base no curso da Udemy:
 > [Curso completo da udemy](https://www.udemy.com/course/vue-js-completo/). :mortar_board:
 
 ## Índice
-* [Hello World](#hello-world)
+* [Hello World](#ancora)
 * [Usando Funcao](#usando-funcao)
 * [Entendendo o this](#entendendo-o-this)
 * [Diretiva v bind](#diretiva-v-bind)
@@ -39,6 +39,7 @@ Esse manual foi feito por mim com base no curso da Udemy:
 ```
 **[⬆ Voltar para o índice](#índice)**
 
+<a id="usando-funcao></a>
 ## Usando Funcao :wrench:
 
 > Um atributo **methods** adicionado ao Vue para adicionar minhas funções (ou métodos), repare que em **data** eu abro um objeto, a mesma coisa em **methods**
