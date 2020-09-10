@@ -3,14 +3,18 @@ Esse manual foi feito por mim com base no curso da Udemy:
 > [Curso completo da udemy](https://www.udemy.com/course/vue-js-completo/). :mortar_board:
 
 ## Índice
-* [Hello World](#ancora1)
-* [Usando Funcao](#ancora2)
-* [Entendendo o this](#entendendo-o-this)
-* [Diretiva v bind](#diretiva-v-bind)
-* [Diretiva v-on](#diretiva-v-on)
-* [Diretiva v-html](#diretiva-v-html)
+* [Hello World](#hello)
+* [Usando Função](#funcao)
+* [Entendendo o this](#this)
+* [Diretiva v-bind](#bind)
+* [Diretiva v-on](#on)
+* [Diretiva v-html](#html)
+* [Diretiva v-click](#click)
+* [Diretiva v-mousemove](#mousemove)
+* [Parâmetro Event](#event)
+* [Eventos com Input](#input)
 
-<a id="ancora1"></a>
+<a id="hello"></a>
 ## Hello World :raised_hand:
 
 > Uma forma de usar o Vue, é copiando a tag script da [documentação](https://vuejs.org/v2/guide/) e colando no seu documento.
@@ -39,8 +43,9 @@ Esse manual foi feito por mim com base no curso da Udemy:
 ```
 **[⬆ Voltar para o índice](#índice)**
 
-<a id="ancora2"></a>
-## Usando Funcao :wrench:
+
+<a id="funcao"></a>
+## Usando Função :wrench:
 
 > Um atributo **methods** adicionado ao Vue para adicionar minhas funções (ou métodos), repare que em **data** eu abro um objeto, a mesma coisa em **methods**
 
@@ -66,8 +71,11 @@ Esse manual foi feito por mim com base no curso da Udemy:
     })
 </script> 
 ```
+**[⬆ Voltar para o índice](#índice)**
 
-## Entendendo o this :wrench:
+
+<a id="this"></a>
+## Entendendo o this :point_right:
 
 > Repare que não preciso usar **{{ Vue.methods.saudacao }}** e também **{{ Vue.data.titulo }}** , o Vue joga todas as propriedades para a raiz dele, e o **this** referencia o Vue, ou seja, pelo **this** consigo acesso direto as propriedades
 
@@ -94,9 +102,11 @@ Esse manual foi feito por mim com base no curso da Udemy:
     })
 </script>
 ```
+**[⬆ Voltar para o índice](#índice)**
 
 
-## Diretiva v bind  :wrench:
+<a id="bind"></a>
+## Diretiva v-bind  :telephone_receiver:
 
 > O HTML permite que eu crie propriedades personalizadas, o Vue usou isso para criar as suas próprias e chamou isso de **diretivas**, ex: **v-bind**, **v-model**, etc.
 
@@ -120,8 +130,11 @@ Esse manual foi feito por mim com base no curso da Udemy:
     })
 </script>
 ```
+**[⬆ Voltar para o índice](#índice)**
 
-## Diretiva v-on  :wrench:
+
+<a id="on"></a>
+## Diretiva v-on  :on:
 
 > **v-on** esperando um evento acontecer para chamar uma função.
 
@@ -147,8 +160,11 @@ Esse manual foi feito por mim com base no curso da Udemy:
     })
 </script>
 ```
+**[⬆ Voltar para o índice](#índice)**
 
-## Diretiva v-html  :wrench:
+
+<a id="html"></a>
+## Diretiva v-html  :hammer:
 
 > **v-html** Posso passar código HTML através de um atributo no Vue.
 
@@ -168,8 +184,11 @@ Esse manual foi feito por mim com base no curso da Udemy:
     })
 </script>
 ```
+**[⬆ Voltar para o índice](#índice)**
 
-## Evento v-on:click  :wrench:
+
+<a id="click"></a>
+## Evento v-on:click  :mouse:
 
 > **v-on:click** Ao ser clicado o elemento dispara uma função.
 
@@ -195,8 +214,11 @@ Esse manual foi feito por mim com base no curso da Udemy:
     })
 </script>
 ```
+**[⬆ Voltar para o índice](#índice)**
 
-## Evento v-on:mousemove  :wrench:
+
+<a id="mousemove"></a>
+## Evento v-on:mousemove  :mouse2:
 
 > **v-on:mousemove** Ao passar o mouse em cima da tag `<p>`, é mostrado a posição do mouse.
 
@@ -231,8 +253,11 @@ Esse manual foi feito por mim com base no curso da Udemy:
     })
 </script>
 ```
+**[⬆ Voltar para o índice](#índice)**
 
-## Parâmetro event  :wrench:
+
+<a id="event"></a>
+## Parâmetro event  :clock130:
 
 > Por padrão o Vue já reconhece o parâmetro event, posso usar sem passar nada na função `<button v-on:click="somar"` mas se eu passar outro parâmetro para a função e ainda sim quiser usar o evento, eu preciso usar o event assim `$event` com dólar na frente e o nome obrigatoriamente precisa ser **event**.
 
@@ -259,8 +284,11 @@ Esse manual foi feito por mim com base no curso da Udemy:
     })
 </script>
 ```
+**[⬆ Voltar para o índice](#índice)**
 
-## Eventos com input
+
+<a id="input"></a>
+## Eventos com input 
 ### Utilizando Javascript Puro:
 
 ```html
@@ -276,7 +304,6 @@ Esse manual foi feito por mim com base no curso da Udemy:
 </script>
 ```
 
-**[⬆ Voltar para o índice](#índice)**
 ### Agora utilizando Vue:
 
 ```html
