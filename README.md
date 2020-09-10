@@ -18,7 +18,7 @@
         }
     })
 </script>
-```js
+```javascript
 
 ## Eventos com input
 
@@ -34,7 +34,7 @@
         p.innerText = event.target.value;
     }
 </script>
-```js
+```javascript
 
 **Agora usando Vue:** 
 
@@ -59,4 +59,4 @@
         }
     })
 </script> 
-```js
+```javascript
