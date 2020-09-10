@@ -1,13 +1,16 @@
 # Curso-Vue-Completo
+Esse manual foi feito por mim com base no curso da Udemy:
 > [Curso completo da udemy](https://www.udemy.com/course/vue-js-completo/). :mortar_board:
 
 ## Índice
 
 * [Primeiro exemplo](#primeiro-exemplo)
+* [Eventos com Input](#eventos-exemplo)
 
 ## Primeiro exemplo
 
-``` javascript<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> <!-- Importando o Vue JS -->
+``` html
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> <!-- Importando o Vue JS -->
 
 <div id="app">
     <p>{{ title }} </p> <!-- Pegando o title da minha minha Vue, uso {{}} -->
@@ -24,13 +27,14 @@
     })
 </script>
 ```
-**[⬆ back to top](#índice)**
+**[⬆ Voltar para o índice](#índice)**
 
 ## Eventos com input
 
 **Em javascript padrão como seria:**
 
-``` <input type="text" onkeypress="alteraTitulo(event)">
+```html
+<input type="text" onkeypress="alteraTitulo(event)">
 <p id="title">Curso Vue</p>
 
 <script>
@@ -42,9 +46,12 @@
 </script>
 ```
 
+**[⬆ Voltar para o índice](#índice)**
+
 **Agora usando Vue:** 
 
-``` <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+```html
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
 <div id="app">
     <input type="text" v-on:input="alteraTitulo">
@@ -66,3 +73,4 @@
     })
 </script> 
 ```
+**[⬆ Voltar para o índice](#índice)**
