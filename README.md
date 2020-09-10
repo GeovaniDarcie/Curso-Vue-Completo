@@ -5,7 +5,7 @@ Esse manual foi feito por mim com base no curso da Udemy:
 ## Índice
 
 * [Primeiro exemplo](#primeiro-exemplo)
-* [Eventos com Input](#eventos-exemplo)
+* [Eventos com Input](#eventos-com-input)
 
 ## Primeiro exemplo
 
@@ -30,8 +30,7 @@ Esse manual foi feito por mim com base no curso da Udemy:
 **[⬆ Voltar para o índice](#índice)**
 
 ## Eventos com input
-
-**Em javascript padrão como seria:**
+### Utilizando Javascript Puro:
 
 ```html
 <input type="text" onkeypress="alteraTitulo(event)">
@@ -47,8 +46,7 @@ Esse manual foi feito por mim com base no curso da Udemy:
 ```
 
 **[⬆ Voltar para o índice](#índice)**
-
-**Agora usando Vue:** 
+## Agora utilizando Vue:
 
 ```html
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
