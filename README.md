@@ -3,31 +3,148 @@ Esse manual foi feito por mim com base no curso da Udemy:
 > [Curso completo da udemy](https://www.udemy.com/course/vue-js-completo/). :mortar_board:
 
 ## Índice
-
-* [Primeiro exemplo](#primeiro-exemplo)
+* [Hello World](#hello-world)
+* [Usando Função](#usando-função)
 * [Eventos com Input](#eventos-com-input)
 
-## Primeiro exemplo
+## Hello World :raised_hand:
+
+> Uma forma de usar o Vue, é copiando a tag script da [documentação](https://vuejs.org/v2/guide/) e colando no seu documento.
+
+> Dentro das tags HTML existe um conteúdo de texto, as chaves duplas **{{ }}** funcionam como interpolação do texto com o atributo do Vue.
+
+> Instanciando uma nova Vue **new Vue()** com o construtor, repare que não precisei fazer **v = new Vue()**  pois o Vue já faz todo esse processo de colocar na variável automaticamente.
+ 
+> O atributo **el** do Vue, representa qual trecho do HTML vou manipular passando o **ID**.
 
 ``` html
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> <!-- Importando o Vue JS -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
 <div id="app">
-    <p>{{ title }} </p> <!-- Pegando o title da minha minha Vue, uso {{}} -->
+    <p>{{ titulo }}</p>
 </div>
 
 <script>
-    /* Instanciando uma nova Vue, com o construtor, repare que não precisei fazer " v = new Vue " pois
-    o Vue já faz todo esse processo. */
     new Vue({
-        el: '#app', /* Qual trecho do html vou controlar, passando o elementoem forma de ID */
-        data: { 
-            title: "Curso de Vue"
+        el: '#app',
+        data: {
+            titulo: 'Hello World!'
         }
     })
 </script>
 ```
 **[⬆ Voltar para o índice](#índice)**
+
+## Usando Função :wrench:
+
+> Um atributo **methods** adicionado ao Vue para adicionar minhas funções (ou métodos), repare que em **data** eu abro um objeto, a mesma coisa em **methods**
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+    <p>{{ titulo }}</p>
+    <p>{{ saudacao() }}</p>
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            titulo: 'Usando VueJs!'
+        },
+        methods: {
+            saudacao: function(){
+                return 'Boa semana'
+            }
+        }
+    })
+</script> 
+```
+
+## Entendendo o this :wrench:
+
+> Repare que não preciso usar **{{ Vue.methods.saudacao }}** e também **{{ Vue.data.titulo }}** , o Vue joga todas as propriedades para a raiz dele, e o **this** referencia o Vue, ou seja, pelo **this** consigo acesso direto as propriedades
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+    <p>{{ titulo }}</p>
+    <p>{{ saudacao() }}</p>
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            titulo: 'Usando VueJs!'
+        },
+        methods: {
+            saudacao: function(){
+                console.log(this)
+                return this.titulo
+            }
+        }
+    })
+</script>
+```
+
+
+## Diretiva v-bind  :wrench:
+
+> O HTML permite que eu crie propriedades personalizadas, o Vue usou isso para criar as suas próprias e chamou isso de **diretivas**, ex: **v-bind**, **v-model**, etc.
+
+> Para usar os atributos do Vue nas propriedades, não posso fazer assim `<a v-href="{{link}}">Google</a> `, as chaves só funcionam pois dentro das tags do HTML eu tenho conteúdo de texto e elas fazem então a interpolação, agora para as propriedades, tem que utilizar as **diretivas** do Vue, ex: `<a v-bind:href="link">Google</a>`
+
+> O **v-bind** faz uma ligação do atributo link do Vue para o HTML.
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+    <a v-bind:href="link">Google</a>
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            link: 'http://google.com.br'
+        },
+    })
+</script>
+```
+
+## Diretiva v-on  :wrench:
+
+> **v-on** esperando um evento acontecer para chamar uma função.
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+    <input v-on:input="saudacao">{{ titulo }}</input>
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            titulo: 'Usando VueJs!',
+        },
+        methods: {
+            saudacao: function(){
+                this.titulo = "Mudei o texto"
+                return this.titulo
+            }
+        }
+    })
+</script>
+```
+
+
+
 
 ## Eventos com input
 ### Utilizando Javascript Puro:
