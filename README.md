@@ -2,9 +2,7 @@
 
 ## Primeiro exemplo
 
-```javascript
-
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> <!-- Importando o Vue JS -->
+``` <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> <!-- Importando o Vue JS -->
 
 <div id="app">
     <p>{{ title }} </p> <!-- Pegando o title da minha minha Vue, uso {{}} -->
@@ -20,15 +18,13 @@
         }
     })
 </script>
-```
+```js
 
 ## Eventos com input
 
 **Em javascript padrão como seria:**
 
-```javascript
-
-<input type="text" onkeypress="alteraTitulo(event)">
+```<input type="text" onkeypress="alteraTitulo(event)">
 <p id="title">Curso Vue</p>
 
 <script>
@@ -38,12 +34,11 @@
         p.innerText = event.target.value;
     }
 </script>
-```
+```js
 
 **Agora usando Vue:** 
 
-```javascript 
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+``` <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
 <div id="app">
     <input type="text" v-on:input="alteraTitulo">
@@ -64,4 +59,4 @@
         }
     })
 </script> 
-```
+```js
