@@ -1,0 +1,23 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+    <p>{{ c }}</p>
+    <p>{{ c >= 10 ? "É maior ou igual a 10" : "É menor e diferente de 10"}}</p>
+    <p>Dobro do contador: {{ c * 2}}</p>
+    <button v-on:click="contador">Aumenta 1</button> 
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            c: 0
+        },
+
+        methods: {
+            contador(){
+                this.c++
+            }
+        }
+    })
+</script>
