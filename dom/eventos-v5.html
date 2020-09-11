@@ -1,0 +1,38 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+    <div>
+        <label>Ativa após qualquer tecla:</label>
+        <input type="text" v-on:keyup="solteiTecla">
+    </div>
+
+    <div>
+        <label>Ativa após o enter:</label>
+        <input type="text" v-on:keyup.enter="solteiEnter">
+    </div>
+
+    <div>
+        <label>Ativa após o enter + alt:</label>
+        <input type="text"  v-on:keyup.enter.alt="solteiEnter_Alt">
+    </div>
+    
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        methods: {  
+            solteiTecla(){
+                alert('apertei qualquer tecla')
+            },
+
+            solteiEnter(){
+                alert('Apertei Enter')
+            },
+
+            solteiEnter_Alt(){
+                alert('Apertei enter+alt')
+            }
+        }
+    })
+</script>
