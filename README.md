@@ -16,6 +16,7 @@ Esse manual foi feito por mim com base no curso da Udemy:
 * [Eventos com Input](#input)
 * [Interpolação](#interpolacao)
 * [Two-way-binding (v-model)](#model)
+* [Propriedades computadas](#computed)
 
 <a id="hello"></a>
 ## Hello World :raised_hand:
@@ -437,6 +438,61 @@ Esse manual foi feito por mim com base no curso da Udemy:
         el: '#app',
         data: {
             titulo: 'Vue Js'
+        }
+    })
+</script>
+```
+**[⬆ Voltar para o índice](#índice)**
+
+<a id="computed"></a>
+## Propriedades computadas :clock130:
+
+> Quando existe alguma alteração na irteface os componentes são rendererizados novamente, então os métodos são invocados mesmo sem ter ligação com as propriedades alteradas. Existe uma propriedade no vue **computed*** que o método só vai ser invocado quando a propriedade que tem relação com ele é alterada.
+
+> Propriedades computed são chamadas sem os pareteses **()**
+
+> Repare que sem o **computed**, o método resultado() era chamado quando clicado em aumentar2, mesmo sem aumentar2 ter relação nenhuma com o método resultado, com o **computed** uma propriedade computada será apenas invocada quando uma propriedade que está relacionada a ela é atualizada!
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+    <button v-on:click="aumentar">Aumentar</button>
+    <button v-on:click="contador2++">Aumentar2</button>
+    <button v-on:click="diminuir">Diminuir</button>
+    <p>Contador: {{ contador1 }} | {{ contador2 }}</p>
+    <p>Resultado: {{ resultado }}</p>
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            contador1: 0,
+            contador2: 0
+        },
+
+        computed: {
+            resultado(){
+                console.log("É chamado apenas quando modifico contador1")
+                return this.contador1 >= 5 ? 
+                       "maior ou igual a 5" : "menor que 5"         
+            }
+        },
+
+        methods: {
+             aumentar(){
+                this.contador1++        
+            },
+             diminuir(){
+                this.contador1--           
+            },
+            /* 
+            resultado(){
+                console.log(É chamado quando modifico contador 2, mesmo sem ter relação)
+                return this.contador >= 5 ? 
+                       "maior ou igual a 5" : "menor que 5"         
+            } */
         }
     })
 </script>
