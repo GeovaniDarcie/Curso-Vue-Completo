@@ -12,6 +12,7 @@ Esse manual foi feito por mim com base no curso da Udemy:
 * [Diretiva v-click](#click)
 * [Diretiva v-mousemove](#mousemove)
 * [Parâmetro Event](#event)
+* [Controlar teclas digitadas pelo usuário (v-on:keyup)](#teclas)
 * [Eventos com Input](#input)
 
 <a id="hello"></a>
@@ -280,6 +281,53 @@ Esse manual foi feito por mim com base no curso da Udemy:
                 console.log(passo, ev)
                 this.contador += passo
             },
+        }
+    })
+</script>
+```
+**[⬆ Voltar para o índice](#índice)**
+
+<a id="teclas"></a>
+## Controlar teclas digitadas pelo usuário (v-on:keyup) :computer:
+
+> Fica muito mais fácil controlar quais teclas o usuário digitou, basta passar o nome da tecla **v-on:keyup.(nome da tecla)**. Para controlar duas teclas pressionadas juntas **v-on:keyp.(nomedatecla).(nomedatecla)**
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+    <div>
+        <label>Ativa após qualquer tecla:</label>
+        <input type="text" v-on:keyup="solteiTecla">
+    </div>
+
+    <div>
+        <label>Ativa após o enter:</label>
+        <input type="text" v-on:keyup.enter="solteiEnter">
+    </div>
+
+    <div>
+        <label>Ativa após o enter + alt:</label>
+        <input type="text"  v-on:keyup.enter.alt="solteiEnter_Alt">
+    </div>
+    
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        methods: {  
+            solteiTecla(){
+                alert('apertei qualquer tecla')
+            },
+
+            solteiEnter(){
+                alert('Apertei Enter')
+            },
+
+            solteiEnter_Alt(){
+                alert('Apertei enter+alt')
+            }
         }
     })
 </script>
