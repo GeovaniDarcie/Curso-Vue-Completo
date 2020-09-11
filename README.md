@@ -290,7 +290,7 @@ Esse manual foi feito por mim com base no curso da Udemy:
 <a id="teclas"></a>
 ## Controlar teclas digitadas pelo usuário (v-on:keyup) :computer:
 
-> Fica muito mais fácil controlar quais teclas o usuário digitou, basta passar **v-on:keyup.(nome da tecla)** para controlar duas teclas pressionadas juntas **v-on:keyp.(nomedatecla).(nomedatecla)**
+> Fica muito mais fácil controlar quais teclas o usuário digitou, basta passar o nome da tecla **v-on:keyup.(nome da tecla)**. Para controlar duas teclas pressionadas juntas **v-on:keyp.(nomedatecla).(nomedatecla)**
 
 ```html
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
