@@ -14,6 +14,8 @@ Esse manual foi feito por mim com base no curso da Udemy:
 * [Parâmetro Event](#event)
 * [Controlar teclas digitadas pelo usuário (v-on:keyup)](#teclas)
 * [Eventos com Input](#input)
+* [Interpolação](#interpolacao)
+* [Two-way-binding (v-model)](#model)
 
 <a id="hello"></a>
 ## Hello World :raised_hand:
@@ -378,3 +380,65 @@ Esse manual foi feito por mim com base no curso da Udemy:
 </script> 
 ```
 **[⬆ Voltar para o índice](#índice)**
+
+<a id="interpolacao"></a>
+## Interpolação  :clock130:
+
+> Consigo escrever instruções simples de uma linha dentro das chaves duplas **{{}}**
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+    <p>{{ c }}</p>
+    <p>{{ c >= 10 ? "É maior ou igual a 10" : "É menor e diferente de 10"}}</p>
+    <p>Dobro do contador: {{ c * 2}}</p>
+    <button v-on:click="contador">Aumenta 1</button> 
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            c: 0
+        },
+
+        methods: {
+            contador(){
+                this.c++
+            }
+        }
+    })
+</script>
+```
+**[⬆ Voltar para o índice](#índice)**
+
+<a id="model"></a>
+## Two-Way-Binding  :clock130:
+
+> Por enquanto com **v-bind*** a minha instância Vue modifica o template. Com os **eventos** o template ouve o evento e modifica os dados da instância Vue, e assim o Vue de novo modifica o template. Agora com o **v-model** eu vou ter a modificação nos dois lugares ao mesmo tempo, tanto se eu modificar o template vai alterar os dados da instância, tanto se eu alterar os dados da instância vai alterar o template, como se fosse um espelho ou via de mão dupla.
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+   <input type="text" v-model="titulo">
+   <p>{{ titulo }}</p>
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            titulo: 'Vue Js'
+        }
+    })
+</script>
+```
+**[⬆ Voltar para o índice](#índice)**
+
+
+
+
