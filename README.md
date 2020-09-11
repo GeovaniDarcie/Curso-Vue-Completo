@@ -416,7 +416,7 @@ Esse manual foi feito por mim com base no curso da Udemy:
 <a id="model"></a>
 ## Two-Way-Binding  :clock130:
 
-> Por enquanto com **v-bind*** a minha instância Vue modifica o template. Com os **eventos** o template ouve o evento e modifica os dados da instância Vue, e assim o Vue de novo modifica o template. Agora com o **v-model** eu vou ter a modificação nos dois lugares ao mesmo tempo, tanto se eu modificar o template vai alterar os dados da instância, tanto se eu alterar os dados da instância vai alterar o template, como se fosse um espelho ou via de mão dupla.
+> Por enquanto com **v-bind*** os dados da minha instância Vue modifica o template e os **eventos** o template ouve o evento e modifica os dados da instância Vue, e assim o Vue de novo modifica o template. Agora com o **v-model** eu vou ter a modificação nos dois lugares ao mesmo tempo, tanto se eu modificar o template vai alterar os dados da instância, tanto se eu alterar os dados da instância vai alterar o template, como se fosse um espelho ou via de mão dupla.
 
 ```html
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
