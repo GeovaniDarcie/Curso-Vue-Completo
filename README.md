@@ -18,6 +18,7 @@ Esse manual foi feito por mim com base no curso da Udemy:
 * [Two-way-binding (v-model)](#model)
 * [Propriedades computadas](#computed)
 * [Propriedade watch](#watch)
+* [Sintaxe reduzida](#reduzida)
 
 <a id="hello"></a>
 ## Hello World :raised_hand:
@@ -533,6 +534,38 @@ Esse manual foi feito por mim com base no curso da Udemy:
                 this.contador++ 
             }   
         }     
+    })
+</script>
+```
+**[⬆ Voltar para o índice](#índice)**
+
+
+<a id="reduzida"></a>
+## Sintaxe reduzida:clock130:
+
+> eventos **v-on** podem ser substituídos por **@** e o **v-bind** por **:**
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+    <p>{{ contador }}</p>
+    <button @click="somar">Somar 1</button>
+    <hr>
+    <input type="text" :value="contador">
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            contador: 0
+        },
+        methods: {
+            somar(){
+                this.contador++
+            }
+        }
     })
 </script>
 ```
