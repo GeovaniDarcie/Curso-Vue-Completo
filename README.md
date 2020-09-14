@@ -17,6 +17,7 @@ Esse manual foi feito por mim com base no curso da Udemy:
 * [Interpolação](#interpolacao)
 * [Two-way-binding (v-model)](#model)
 * [Propriedades computadas](#computed)
+* [Propriedade watch](#watch)
 
 <a id="hello"></a>
 ## Hello World :raised_hand:
@@ -499,6 +500,43 @@ Esse manual foi feito por mim com base no curso da Udemy:
 ```
 **[⬆ Voltar para o índice](#índice)**
 
+<a id="watch"></a>
+## Propriedade watch :clock130:
+
+> Monitora a mudança da propriedade. 
+
+>Precisa ter o mesmo nome das propriedades dos dados.
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+    <button v-on:click="aumentar">Aumentar</button>
+    <p>{{ contador }}</p>
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            contador: 0,
+        },
+
+        watch: {
+            contador(novo, antigo){
+               console.log(novo, antigo)
+            }
+        },
+
+        methods: {
+             aumentar(){
+                this.contador++ 
+            }   
+        }     
+    })
+</script>
+```
+**[⬆ Voltar para o índice](#índice)**
 
 
 
