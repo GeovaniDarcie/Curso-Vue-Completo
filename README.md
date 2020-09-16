@@ -19,6 +19,10 @@ Esse manual foi feito por mim com base no curso da Udemy:
 * [Propriedades computadas](#computed)
 * [Propriedade watch](#watch)
 * [Sintaxe reduzida](#reduzida)
+* [Estilo Dinâmico e classes CSS](#estilo)
+* [Estilo Dinâmico e classes CSS 2)](#estilo2)
+* [Estilo Dinâmico e classes CSS 3)](#estilo3)
+* [Estilo Dinâmico sem classe)](#semclasse)
 
 <a id="hello"></a>
 ## Hello World :raised_hand:
@@ -571,5 +575,242 @@ Esse manual foi feito por mim com base no curso da Udemy:
 ```
 **[⬆ Voltar para o índice](#índice)**
 
+
+<a id="estilo"></a>
+## Estilo dinâmico e classes CSS:clock130:
+
+> Aplicar estilo do CSS diretamente no template, é usado **:class="{ (nome da classe): (valor booleano)}"** ex: **:class="{c1: true}**
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<style>
+    #app{
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .demo{
+        width: 100px;
+        height: 100px;
+        background-color: gray;
+    }
+
+    .c1 {
+        background-color: red;
+    }
+
+    .c2 {
+        background-color: green;
+    }
+
+    .c3 {
+        background-color: blue;
+    }
+</style>
+
+<div id="app">
+    <div class="demo" :class="{c1: aplicarC1}"
+         @click="aplicarC1 = !aplicarC1"></div>
+    <div class="demo"></div>
+    <div class="demo"></div>
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            aplicarC1: false
+        }
+    })
+</script>
+```
+**[⬆ Voltar para o índice](#índice)**
+
+<a id="estilo2"></a>
+## Estilo dinâmico e classes CSS 2:clock130:
+
+> Uma outra forma de aplicar as classes é usando a propriedade computed, consigo assim aplicar várias classes de uma forma mais enxuta.
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<style>
+    #app{
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .demo{
+        width: 100px;
+        height: 100px;
+        background-color: gray;
+    }
+
+    .c1 {
+        background-color: red;
+    }
+
+    .c2 {
+        background-color: green;
+    }
+
+    .c3 {
+        background-color: blue;
+    }
+</style>
+
+<div id="app">
+    <div class="demo" :class="estilo" @click="aplicarC1 = !aplicarC1"></div>
+    <div class="demo"></div>
+    <div class="demo"></div>
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            aplicarC1: false
+        },
+
+        computed: {
+            estilo(){
+                return {
+                    c1: this.aplicarC1,
+                    c2: !this.aplicarC1
+                }
+            }
+        }
+    })
+</script>
+```
+**[⬆ Voltar para o índice](#índice)**
+
+
+<a id="estilo3"></a>
+## Estilo dinâmico e classes CSS 3:clock130:
+
+> Mudar o nome da classe CSS através de propriedades do VUE
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<style>
+    .caixas{
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .demo{
+        width: 100px;
+        height: 100px;
+        background-color: gray;
+    }
+
+    .c1 {
+        background-color: red;
+    }
+
+    .c2 {
+        background-color: green;
+    }
+
+    .c3 {
+        background-color: blue;
+    }
+
+    .girar {
+        transform: rotate(45deg);
+    }
+</style>
+
+<div id="app">
+    <div class="caixas">
+        <div class="demo" :class="estilo" @click="aplicarC1 = !aplicarC1"></div>
+        <div class="demo"></div>
+        <div class="demo" :class="[classeCSS]"></div>
+    </div>
+    <hr>
+    <input type="text" v-model="classeCSS">
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            aplicarC1: false,
+            classeCSS: "c1",
+            teste: "girar"
+        },
+
+        computed: {
+            estilo(){
+                return {
+                    c1: this.aplicarC1,
+                    c2: !this.aplicarC1
+                }
+            }
+        }
+    })
+</script>
+```
+**[⬆ Voltar para o índice](#índice)**
+
+
+<a id="semclasse"></a>
+## Estilo dinâmico sem classe :clock130:
+
+> Lembrando que para aplicar o nome de uma classe no template que tenha **-** precisa usar aspas. ex: 'background-color'
+
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<style>
+    .caixas{
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .demo{
+        width: 100px;
+        height: 100px;
+        background-color: gray;
+    }
+
+</style>
+
+<div id="app">
+    <div class="caixas">
+        <div class="demo" :style="{'background-color' : cor}"></div>
+        <div class="demo" :style="[meuEstilo, {height: altura} ]"></div>
+        <div class="demo"></div>
+    </div>
+    <hr>
+    <input type="text" v-model="cor">
+    <input type="text" v-model="largura">
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+           cor: 'red',
+           largura : '300',
+           altura : 20
+        },
+
+        computed: {
+            meuEstilo(){
+                return{
+                    backGroundColor: this.cor,
+                    width : this.largura + 'px'
+                }
+            }  
+        }
+    })
+</script>
+```
+**[⬆ Voltar para o índice](#índice)**
 
 
