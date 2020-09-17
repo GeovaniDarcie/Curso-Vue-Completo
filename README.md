@@ -4,7 +4,7 @@ Esse manual foi feito por mim com base no curso da Udemy:
 
 ## Índice
 
-### Capítulo 1: Usando VueJS para Interagir com a DOM
+### Capítulo 1: Usando VueJS para Interagir com a DOM 
 * [Hello World](#hello)
 * [Usando Função](#funcao)
 * [Entendendo o this](#this)
@@ -26,6 +26,7 @@ Esse manual foi feito por mim com base no curso da Udemy:
 * [Estilo Dinâmico e classes CSS 3](#estilo3)
 * [Estilo Dinâmico sem classe](#semclasse)
 
+<a id="capitulo2"></a>
 ### Capítulo 2: Usando Condicionais & Renderização de Listas
 
 * [Condicional: v-if e v-else](#vif)
@@ -40,7 +41,7 @@ Esse manual foi feito por mim com base no curso da Udemy:
 * [ Iterando em uma Lista de Números](#listanumero)
 
 
-
+### Capítulo 1: Usando VueJS para Interagir com a DOM 
 <a id="hello"></a>
 ## Hello World :raised_hand:
 
@@ -831,6 +832,7 @@ Esse manual foi feito por mim com base no curso da Udemy:
 **[⬆ Voltar para o índice](#índice)**
 
 
+### Capítulo 2: Usando Condicionais & Renderização de Listas
 <a id="vif"></a>
 ## Condicional v-if e v-else :performing_arts:
 
@@ -858,7 +860,7 @@ Esse manual foi feito por mim com base no curso da Udemy:
     })
 </script>
 ```
-**[⬆ Voltar para o índice](#índice)**
+**[⬆ Voltar para o índice](#capitulo2)**
 
 
 <a id="velse"></a>
@@ -889,7 +891,7 @@ Esse manual foi feito por mim com base no curso da Udemy:
     })
 </script>
 ```
-**[⬆ Voltar para o índice](#índice)**
+**[⬆ Voltar para o índice](#capitulo2)**
 
 
 <a id="velse"></a>
@@ -924,7 +926,7 @@ Esse manual foi feito por mim com base no curso da Udemy:
     })
 </script>
 ```
-**[⬆ Voltar para o índice](#índice)**
+**[⬆ Voltar para o índice](#capitulo2)**
 
 
 <a id="vshow"></a>
@@ -967,7 +969,7 @@ Esse manual foi feito por mim com base no curso da Udemy:
     })
 </script>
 ```
-**[⬆ Voltar para o índice](#índice)**
+**[⬆ Voltar para o índice](#capitulo2)**
 
 
 
@@ -995,7 +997,7 @@ Esse manual foi feito por mim com base no curso da Udemy:
     })
 </script>
 ```
-**[⬆ Voltar para o índice](#índice)**
+**[⬆ Voltar para o índice](#capitulo2)**
 
 
 <a id="listai"></a>
@@ -1028,7 +1030,7 @@ Esse manual foi feito por mim com base no curso da Udemy:
     }
 </style>
 ```
-**[⬆ Voltar para o índice](#índice)**
+**[⬆ Voltar para o índice](#capitulo2)**
 
 
 <a id="vfortemplate"></a>
@@ -1067,7 +1069,7 @@ Esse manual foi feito por mim com base no curso da Udemy:
     }
 </style>
 ```
-**[⬆ Voltar para o índice](#índice)**
+**[⬆ Voltar para o índice](#capitulo2)**
 
 
 <a id="interandoobjetos"></a>
@@ -1108,7 +1110,7 @@ Esse manual foi feito por mim com base no curso da Udemy:
     }
 </style>
 ```
-**[⬆ Voltar para o índice](#índice)**
+**[⬆ Voltar para o índice](#capitulo2)**
 
 
 <a id="key"></a>
@@ -1141,7 +1143,7 @@ Esse manual foi feito por mim com base no curso da Udemy:
 </script>
 
 ```
-**[⬆ Voltar para o índice](#índice)**
+**[⬆ Voltar para o índice](#capitulo2)**
 
 
 <a id="listanumero"></a>
@@ -1164,7 +1166,7 @@ Esse manual foi feito por mim com base no curso da Udemy:
 </script>
 
 ```
-**[⬆ Voltar para o índice](#índice)**
+**[⬆ Voltar para o índice](#capitulo2)**
 
 
 
