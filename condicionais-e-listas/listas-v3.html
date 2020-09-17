@@ -1,0 +1,29 @@
+<meta charset="UTF-8">
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+    <ul>
+        <li v-for="(cor, indice) in cores">{{ indice }} - {{ cor }}</li>
+    </ul>
+
+    <hr>
+    <template v-for="(cor, indice) in cores">
+        <h1>{{ cor }}</h1>
+        <p>{{ indice }}</p>
+    </template>
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            cores: ['azul', 'verde', 'amarelo', 'rosa']
+        }
+    })
+</script>
+
+<style>
+    ul{
+        list-style-type: none;
+    }
+</style>

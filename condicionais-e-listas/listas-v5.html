@@ -1,0 +1,22 @@
+<meta charset="UTF-8">
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+    <ul>
+        <li v-for="cor in cores" :key="cor">{{ cor }}</li>
+    </ul>
+
+    <input type="text" v-model="cor">
+    <button @click="cores.push(cor)">Adicionar</button>
+    
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+           cor: '',
+           cores: ['amarelo', 'verde', 'azul', 'roxo', 'vermelho']
+        }
+    })
+</script>
