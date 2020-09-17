@@ -29,8 +29,15 @@ Esse manual foi feito por mim com base no curso da Udemy:
 ### Capítulo 2: Usando Condicionais & Renderização de Listas
 
 * [Condicional: v-if e v-else](#vif)
-
-
+* [Condicional: v-else-if](#velse)
+* [Condicional: v-else-if com Template](#template)
+* [Diretiva v-show](#vshow)
+* [Renderizando Lista com v-for](#vfor)
+* [Acesso ao índice atual da lista](#listai)
+* [Usando v-for com template](#vfortemplate)
+* [Iterando em Objetos](#interandoobjetos)
+* [Identificando os Elementos no v-for (key)](#key)
+* [ Iterando em uma Lista de Números](#listanumero)
 
 
 
@@ -829,6 +836,8 @@ Esse manual foi feito por mim com base no curso da Udemy:
 
 > **v-if** se a condição for true aparece o elemento, **se não** (v-else) aparece o outro elemento.
 
+> Veja nos elementos, eles desaparecem na DOM conforme a condição.
+
 ```html
 <meta charset="UTF-8">
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -850,5 +859,313 @@ Esse manual foi feito por mim com base no curso da Udemy:
 </script>
 ```
 **[⬆ Voltar para o índice](#índice)**
+
+
+<a id="velse"></a>
+## Condicional v-else-if :performing_arts:
+
+> Construir vários if aninhados.
+
+```html
+<meta charset="UTF-8">
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+    <p v-if="logado">Usuário Logado: {{ nome }}</p>
+    <p v-else-if="anonimo">Navegando como anônimo</p>
+    <p v-else>Nenhum usuário logado</p>
+    <button @click="logado = !logado">{{ logado ? 'Sair' : 'Entrar' }}</button>
+    <input type="checkbox" v-model="anonimo">
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            nome: 'Maria',
+            logado: false,
+            anonimo: false
+        }
+    })
+</script>
+```
+**[⬆ Voltar para o índice](#índice)**
+
+
+<a id="velse"></a>
+## Condicional v-else-if 
+
+> Com a tag **template** do html 5, conseguimos envolver nossas tags sem o template aparecer na DOM.
+
+```html
+<meta charset="UTF-8">
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+    <template v-if="logado">
+        <p>Usuário Logado: {{ nome }}</p>
+        <p>Perfil: admin</p>
+    </template>
+   
+    <p v-else-if="anonimo">Navegando como anônimo</p>
+    <p v-else>Nenhum usuário logado</p>
+    <button @click="logado = !logado">{{ logado ? 'Sair' : 'Entrar' }}</button>
+    <input type="checkbox" v-model="anonimo">
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            nome: 'Maria',
+            logado: false,
+            anonimo: false
+        }
+    })
+</script>
+```
+**[⬆ Voltar para o índice](#índice)**
+
+
+<a id="vshow"></a>
+## Diretiva v-show 
+
+> Com a diretiva **v-show**, o elemento não desaparece da DOM, apenas é usado um estilo para ele ficar display:none.
+> **v-show** não tem "else", basta aplicar uma negação a ele.
+
+```html
+<meta charset="UTF-8">
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+    <template v-if="logado">
+        <p>Usuário Logado: {{ nome }}</p>
+        <p>Perfil: admin</p>
+    </template>
+   
+    <p v-else-if="anonimo">Navegando como anônimo</p>
+    <p v-else>Nenhum usuário logado</p>
+    <button @click="logado = !logado">{{ logado ? 'Sair' : 'Entrar' }}</button>
+    <input type="checkbox" v-model="anonimo">
+    <hr>
+    <footer v-show="logado">
+        Feito para você! {{ nome }}
+    </footer>
+    <footer v-show="!logado">
+        Feito para você desconhecido
+    </footer>
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            nome: 'Maria',
+            logado: false,
+            anonimo: false
+        }
+    })
+</script>
+```
+**[⬆ Voltar para o índice](#índice)**
+
+
+
+<a id="vfor"></a>
+## Renderizando Lista com v-for 
+
+> Com **v-for** eu consigo fazer algo semelhante ao **for each**
+
+```html
+<meta charset="UTF-8">
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+    <ul>
+        <li v-for="cor in cores">{{ cor }}</li>
+    </ul>
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            cores: ['azul', 'verde', 'amarelo', 'rosa']
+        }
+    })
+</script>
+```
+**[⬆ Voltar para o índice](#índice)**
+
+
+<a id="listai"></a>
+## Acesso ao índice atual da lista 
+
+> O segundo parâmetro sempre será o segundo valor mais importante, nesse caso o índice. **v-for="(cor, indice) in cores" **
+
+```html
+<meta charset="UTF-8">
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+    <ul>
+        <li v-for="(cor, indice) in cores">{{ indice }} - {{ cor }}</li>
+    </ul>
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            cores: ['azul', 'verde', 'amarelo', 'rosa']
+        }
+    })
+</script>
+
+<style>
+    ul{
+        list-style-type: none;
+    }
+</style>
+```
+**[⬆ Voltar para o índice](#índice)**
+
+
+<a id="vfortemplate"></a>
+## Usando v-for com template
+
+> tag **template** sempre ficará oculta na DOM.
+
+```html
+<meta charset="UTF-8">
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+    <ul>
+        <li v-for="(cor, indice) in cores">{{ indice }} - {{ cor }}</li>
+    </ul>
+
+    <hr>
+    <template v-for="(cor, indice) in cores">
+        <h1>{{ cor }}</h1>
+        <p>{{ indice }}</p>
+    </template>
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            cores: ['azul', 'verde', 'amarelo', 'rosa']
+        }
+    })
+</script>
+
+<style>
+    ul{
+        list-style-type: none;
+    }
+</style>
+```
+**[⬆ Voltar para o índice](#índice)**
+
+
+<a id="interandoobjetos"></a>
+## Interando em objetos
+
+> Nesse caso, o segundo parâmetro de maior importante será a chave, e o terceiro o índice.
+
+```html
+<meta charset="UTF-8">
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+    <ul>
+        <li v-for="pessoa in pessoas">
+            <span v-for="(valor, chave, index) in pessoa">
+               {{ chave }} = {{ valor }} ({{index}})
+            </span>
+        </li>
+    </ul>
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            cores: ['azul', 'verde', 'amarelo', 'rosa'],
+            pessoas: [
+                {nome: 'Ana', idade: 26, peso: 59},
+                {nome: 'Guilherme', idade: 22, peso: 89}
+            ]
+        }
+    })
+</script>
+
+<style>
+    ul{
+        list-style-type: none;
+    }
+</style>
+```
+**[⬆ Voltar para o índice](#índice)**
+
+
+<a id="key"></a>
+## Identificando os Elementos no v-for (key)
+
+> o atributo key é apenas um atributo que visa auxiliar o Vue no controle de alterações em listas. Para que o que está sendo apresentado na tela, reflita exatamente o que está no array.
+
+```html
+<meta charset="UTF-8">
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+    <ul>
+        <li v-for="cor in cores" :key="cor">{{ cor }}</li>
+    </ul>
+
+    <input type="text" v-model="cor">
+    <button @click="cores.push(cor)">Adicionar</button>
+    
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+           cor: '',
+           cores: ['amarelo', 'verde', 'azul', 'roxo', 'vermelho']
+        }
+    })
+</script>
+
+```
+**[⬆ Voltar para o índice](#índice)**
+
+
+<a id="listanumero"></a>
+##  Iterando em uma Lista de Números
+
+```html
+<meta charset="UTF-8">
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+    <ul>
+        <li v-for="numero in 20">{{numero}}</li>
+    </ul> 
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+    })
+</script>
+
+```
+**[⬆ Voltar para o índice](#índice)**
+
+
 
 
