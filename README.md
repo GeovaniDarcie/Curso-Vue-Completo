@@ -20,9 +20,10 @@ Esse manual foi feito por mim com base no curso da Udemy:
 * [Propriedade watch](#watch)
 * [Sintaxe reduzida](#reduzida)
 * [Estilo Dinâmico e classes CSS](#estilo)
-* [Estilo Dinâmico e classes CSS 2)](#estilo2)
-* [Estilo Dinâmico e classes CSS 3)](#estilo3)
-* [Estilo Dinâmico sem classe)](#semclasse)
+* [Estilo Dinâmico e classes CSS 2](#estilo2)
+* [Estilo Dinâmico e classes CSS 3](#estilo3)
+* [Estilo Dinâmico sem classe](#semclasse)
+* [Condicional: v-if e v-else](#vif)
 
 <a id="hello"></a>
 ## Hello World :raised_hand:
@@ -389,7 +390,7 @@ Esse manual foi feito por mim com base no curso da Udemy:
 **[⬆ Voltar para o índice](#índice)**
 
 <a id="interpolacao"></a>
-## Interpolação  :clock130:
+## Interpolação 
 
 > Consigo escrever instruções simples de uma linha dentro das chaves duplas **{{}}**
 
@@ -421,7 +422,7 @@ Esse manual foi feito por mim com base no curso da Udemy:
 **[⬆ Voltar para o índice](#índice)**
 
 <a id="model"></a>
-## Two-Way-Binding  :clock130:
+## Two-Way-Binding (v-model) :arrows_clockwise:
 
 > Por enquanto com **v-bind*** os dados da minha instância Vue modificam apenas o template.
 
@@ -451,7 +452,7 @@ Esse manual foi feito por mim com base no curso da Udemy:
 **[⬆ Voltar para o índice](#índice)**
 
 <a id="computed"></a>
-## Propriedades computadas :clock130:
+## Propriedades computadas :computer:
 
 > Quando existe alguma alteração na irteface os componentes são rendererizados novamente, então os métodos são invocados mesmo sem ter ligação com as propriedades alteradas. Existe uma propriedade no vue **computed*** que o método só vai ser invocado quando a propriedade que tem relação com ele é alterada.
 
@@ -506,7 +507,7 @@ Esse manual foi feito por mim com base no curso da Udemy:
 **[⬆ Voltar para o índice](#índice)**
 
 <a id="watch"></a>
-## Propriedade watch :clock130:
+## Propriedade watch :tv:
 
 > Monitora a mudança da propriedade. 
 
@@ -545,7 +546,7 @@ Esse manual foi feito por mim com base no curso da Udemy:
 
 
 <a id="reduzida"></a>
-## Sintaxe reduzida:clock130:
+## Sintaxe reduzida 
 
 > eventos **v-on** podem ser substituídos por **@** e o **v-bind** por **:**
 
@@ -577,7 +578,7 @@ Esse manual foi feito por mim com base no curso da Udemy:
 
 
 <a id="estilo"></a>
-## Estilo dinâmico e classes CSS:clock130:
+## Estilo dinâmico e classes CSS :tshirt:
 
 > Aplicar estilo do CSS diretamente no template, é usado **:class="{ (nome da classe): (valor booleano)}"** ex: **:class="{c1: true}**
 
@@ -628,7 +629,7 @@ Esse manual foi feito por mim com base no curso da Udemy:
 **[⬆ Voltar para o índice](#índice)**
 
 <a id="estilo2"></a>
-## Estilo dinâmico e classes CSS 2:clock130:
+## Estilo dinâmico e classes CSS 2 :art:
 
 > Uma outra forma de aplicar as classes é usando a propriedade computed, consigo assim aplicar várias classes de uma forma mais enxuta.
 
@@ -688,7 +689,7 @@ Esse manual foi feito por mim com base no curso da Udemy:
 
 
 <a id="estilo3"></a>
-## Estilo dinâmico e classes CSS 3:clock130:
+## Estilo dinâmico e classes CSS 3 :eyeglasses:
 
 > Mudar o nome da classe CSS através de propriedades do VUE
 
@@ -758,7 +759,7 @@ Esse manual foi feito por mim com base no curso da Udemy:
 
 
 <a id="semclasse"></a>
-## Estilo dinâmico sem classe :clock130:
+## Estilo dinâmico sem classe :tophat:
 
 > Lembrando que para aplicar o nome de uma classe no template que tenha **-** precisa usar aspas. ex: 'background-color'
 
@@ -807,6 +808,35 @@ Esse manual foi feito por mim com base no curso da Udemy:
                     width : this.largura + 'px'
                 }
             }  
+        }
+    })
+</script>
+```
+**[⬆ Voltar para o índice](#índice)**
+
+
+<a id="semclasse"></a>
+## Condicional v-if e v-else :tophat:
+
+> **v-if** se a condição for true aparece o elemento, **se não** (v-else) aparece o outro elemento.
+
+
+```html
+<meta charset="UTF-8">
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+    <p v-if="logado">Usuário Logado: {{ nome }}</p>
+    <p v-else>Nenhum usuário logado</p>
+    <button @click="logado = !logado">{{ logado ? 'Sair' : 'Entrar' }}</button>
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            nome: 'Maria',
+            logado: false
         }
     })
 </script>
