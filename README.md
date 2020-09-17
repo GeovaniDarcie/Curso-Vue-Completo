@@ -41,7 +41,7 @@ Esse manual foi feito por mim com base no curso da Udemy:
 * [ Iterando em uma Lista de Números](#listanumero)
 
 
-### Capítulo 1: Usando VueJS para Interagir com a DOM 
+# Capítulo 1: Usando VueJS para Interagir com a DOM 
 <a id="hello"></a>
 ## Hello World :raised_hand:
 
@@ -832,7 +832,7 @@ Esse manual foi feito por mim com base no curso da Udemy:
 **[⬆ Voltar para o índice](#índice)**
 
 
-### Capítulo 2: Usando Condicionais & Renderização de Listas
+# Capítulo 2: Usando Condicionais & Renderização de Listas
 <a id="vif"></a>
 ## Condicional v-if e v-else :performing_arts:
 
