@@ -816,7 +816,7 @@ Esse manual foi feito por mim com base no curso da Udemy:
 
 
 <a id="vif"></a>
-## Condicional v-if e v-else :tophat:
+## Condicional v-if e v-else :performing_arts:
 
 > **v-if** se a condição for true aparece o elemento, **se não** (v-else) aparece o outro elemento.
 
