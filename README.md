@@ -3,6 +3,8 @@ Esse manual foi feito por mim com base no curso da Udemy:
 > [Curso completo da udemy](https://www.udemy.com/course/vue-js-completo/). :mortar_board:
 
 ## Índice
+
+### Capítulo 1: Usando VueJS para Interagir com a DOM
 * [Hello World](#hello)
 * [Usando Função](#funcao)
 * [Entendendo o this](#this)
@@ -23,6 +25,9 @@ Esse manual foi feito por mim com base no curso da Udemy:
 * [Estilo Dinâmico e classes CSS 2](#estilo2)
 * [Estilo Dinâmico e classes CSS 3](#estilo3)
 * [Estilo Dinâmico sem classe](#semclasse)
+
+### Capítulo 2: Usando Condicionais & Renderização de Listas
+
 * [Condicional: v-if e v-else](#vif)
 
 <a id="hello"></a>
