@@ -30,6 +30,10 @@ Esse manual foi feito por mim com base no curso da Udemy:
 
 * [Condicional: v-if e v-else](#vif)
 
+
+
+
+
 <a id="hello"></a>
 ## Hello World :raised_hand:
 
