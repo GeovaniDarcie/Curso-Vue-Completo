@@ -815,11 +815,10 @@ Esse manual foi feito por mim com base no curso da Udemy:
 **[⬆ Voltar para o índice](#índice)**
 
 
-<a id="semclasse"></a>
+<a id="vif"></a>
 ## Condicional v-if e v-else :tophat:
 
 > **v-if** se a condição for true aparece o elemento, **se não** (v-else) aparece o outro elemento.
-
 
 ```html
 <meta charset="UTF-8">
