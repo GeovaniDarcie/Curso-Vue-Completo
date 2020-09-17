@@ -894,8 +894,8 @@ Esse manual foi feito por mim com base no curso da Udemy:
 **[⬆ Voltar para o índice](#capitulo2)**
 
 
-<a id="velse"></a>
-## Condicional v-else-if 
+<a id="template"></a>
+## Condicional v-else-if com template
 
 > Com a tag **template** do html 5, conseguimos envolver nossas tags sem o template aparecer na DOM.
 
