@@ -40,6 +40,11 @@ Esse manual foi feito por mim com base no curso da Udemy:
 * [Identificando os Elementos no v-for (key)](#key)
 * [ Iterando em uma Lista de Números](#listanumero)
 
+<a id="capitulo3"></a>
+### Capítulo 3: Entendendo a Instância Vue
+* [Usando Múltiplas Instâncias Vue](#multvue)
+* [Acessando a Instância Vue Externamente](#exvue)
+* [Como o VueJS Gerencia os Dados e Métodos](#gerencia)
 
 # Capítulo 1: Usando VueJS para Interagir com a DOM 
 <a id="hello"></a>
@@ -1167,6 +1172,199 @@ Esse manual foi feito por mim com base no curso da Udemy:
 
 ```
 **[⬆ Voltar para o índice](#capitulo2)**
+
+
+
+# Capítulo 3: Entendendo a Instância Vue
+
+<a id="multvue"></a>
+##  Usando Múltiplas Instâncias Vue
+
+> Não é usual usar múltiplas instâncias vue, mas esse capítulo é para mostrar que isso é possível
+
+```html
+<meta charset="UTF-8">
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app1">
+    {{titulo1}}
+    <button @click="alterar">Alterar</button>
+</div>
+
+<div id="app2">
+    {{titulo2}}
+    <button @click="alterar">Alterar</button>
+</div>
+
+<script>
+    new Vue({
+        el: '#app1',
+        data: {
+            titulo1: 'teste1'
+        },
+        methods: {
+            alterar(){
+                this.titulo1 += '!!!'
+            }
+        }
+    })
+
+    new Vue({
+        el: '#app2',
+        data: {
+            titulo2: 'teste2'
+        },
+        methods: {
+            alterar(){
+                this.titulo2 += '!!!'
+            }
+        }
+    })
+</script>
+
+```
+**[⬆ Voltar para o índice](#capitulo3)**
+
+
+<a id="exvue"></a>
+##  Acessando a Instância Vue Externamente
+
+> Consigo acessar dados de uma instância Vue dentro de outra e acessar dados da Vue através de javascript puro.
+
+```html
+<meta charset="UTF-8">
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app1">
+    {{titulo1}}
+    <button @click="alterar">Alterar</button>
+</div>
+
+<div id="app2">
+    {{titulo2}}
+    <button @click="alterar">Alterar</button>
+</div>
+
+<script>
+    const vm1 = new Vue({
+        el: '#app1',
+        data: {
+            titulo1: 'teste1'
+        },
+        methods: {
+            alterar(){
+                vm2.titulo2 += '???'
+            }
+        }
+    })
+
+   const vm2 = new Vue({
+        el: '#app2',
+        data: {
+            titulo2: 'teste2'
+        },
+        methods: {
+            alterar(){
+                vm1.titulo1 += '!!!'
+            }
+        }
+    })
+
+    setTimeout(() => {
+        vm1.titulo1 = 'Alterado pelo timer'
+    }, 2000)
+</script>
+```
+**[⬆ Voltar para o índice](#capitulo3)**
+
+
+<a id="exvue"></a>
+##  Acessando a Instância Vue Externamente
+
+> Consigo acessar dados de uma instância Vue dentro de outra e acessar dados da Vue através de javascript puro.
+
+```html
+<meta charset="UTF-8">
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app1">
+    {{titulo1}}
+    <button @click="alterar">Alterar</button>
+</div>
+
+<div id="app2">
+    {{titulo2}}
+    <button @click="alterar">Alterar</button>
+</div>
+
+<script>
+    const vm1 = new Vue({
+        el: '#app1',
+        data: {
+            titulo1: 'teste1'
+        },
+        methods: {
+            alterar(){
+                vm2.titulo2 += '???'
+            }
+        }
+    })
+
+   const vm2 = new Vue({
+        el: '#app2',
+        data: {
+            titulo2: 'teste2'
+        },
+        methods: {
+            alterar(){
+                vm1.titulo1 += '!!!'
+            }
+        }
+    })
+
+    setTimeout(() => {
+        vm1.titulo1 = 'Alterado pelo timer'
+    }, 2000)
+</script>
+```
+**[⬆ Voltar para o índice](#capitulo3)**
+
+
+
+<a id="gerencia"></a>
+##  Como o VueJS Gerencia os Dados e Métodos
+
+> Aqui, estou adicionando uma nova propriedade para minha instância  **vm.novainfo** porém quando vou renderizar na tela, acontece o erro,
+esse dado não é reativo, pois não declarei ele dentro da minha instância Vue.
+
+```html
+<meta charset="UTF-8">
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+    {{titulo}} {{ novaInfo}}
+    <button @click="alterar">Alterar</button>
+</div>
+
+<script>
+    const vm = new Vue({
+        el: '#app',
+        data: {
+            titulo: 'teste'
+        },
+        methods: {
+            alterar(){
+                this.titulo += '???'
+            }
+        }
+    })
+
+    vm.novaInfo = 'Teste'
+    console.log(vm.novaInfo)
+
+</script>
+```
+**[⬆ Voltar para o índice](#capitulo3)**
 
 
 
