@@ -45,6 +45,9 @@ Esse manual foi feito por mim com base no curso da Udemy:
 * [Usando Múltiplas Instâncias Vue](#multvue)
 * [Acessando a Instância Vue Externamente](#exvue)
 * [Como o VueJS Gerencia os Dados e Métodos](#gerencia)
+* [Montando um Template](#mount)
+* [Usando Componentess](#usandocomponentes)
+* [O Ciclo de Vida da Instância Vue](#ciclodevida)
 
 # Capítulo 1: Usando VueJS para Interagir com a DOM 
 <a id="hello"></a>
@@ -1362,6 +1365,160 @@ esse dado não é reativo, pois não declarei ele dentro da minha instância Vue
     vm.novaInfo = 'Teste'
     console.log(vm.novaInfo)
 
+</script>
+```
+**[⬆ Voltar para o índice](#capitulo3)**
+
+
+<a id="mount"></a>
+##  Montando um Template
+
+> Template aqui é uma propriedade da instância Vue, uso crases ` ` para conseguir escrever em mais de uma linha. O template pode ser montado
+com o método **$mount(#app)** passando o #app ou com javascript puro como mostrando na última linha
+
+```html
+<meta charset="UTF-8">
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+
+</div>
+
+<script>
+    const vm = new Vue({
+        template: `
+            <div>
+                <h1>{{ aula }}</h1>
+                <h2>{{ modulo }}</h2>
+                <button @click="alterarAula">Alterar Aula</button>
+                <button @click="alterarModulo">Alterar Módulo</button>
+            </div>
+        `
+        ,
+        data:{
+            aula: 'Aula: montando instância vue',
+            modulo: 'Modulo: Instância Vue'
+        },
+        methods: {
+            alterarAula(){
+                this.aula += '#'
+            },
+            alterarModulo(){
+                this.modulo += '#'
+            }
+        }
+    })
+
+    //vm.$mount('#app')
+    vm.$mount()
+    document.querySelector('#app').appendChild(vm.$el)
+</script>
+```
+**[⬆ Voltar para o índice](#capitulo3)**
+
+
+<a id="usandocomponentes"></a>
+##  Usando componentes
+
+> Essa não é a melhor forma de usar componentes.
+
+> Repare que o **data** é usado como função, para que cada componentes tenha suas próprias propriedades, 
+se fosse passado como na instância, todo componentes teriam os mesmo dados alterados. Com a função ele sempre retorna um diferente.
+
+> Componentes são usados como tags HTML.
+ 
+```html
+<meta charset="UTF-8">
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+    <comp></comp>
+    <comp></comp>
+    <comp></comp>
+</div>
+
+<script>
+    Vue.component('comp', {
+        template: `
+            <div>
+                <h1>{{ aula }}</h1>
+                <h2>{{ modulo }}</h2>
+                <button @click="alterarAula">Alterar Aula</button>
+                <button @click="alterarModulo">Alterar Módulo</button>
+            </div>
+        `
+        ,
+        data: function(){
+            return{
+                aula: 'Aula: montando instância vue',
+                modulo: 'Modulo: Instância Vue'
+            }
+        },
+        methods: {
+            alterarAula(){
+                this.aula += '#'
+            },
+            alterarModulo(){
+                this.modulo += '#'
+            }
+        }
+    })
+
+    const vm = new Vue({
+        el: '#app', 
+    })
+
+</script>
+```
+**[⬆ Voltar para o índice](#capitulo3)**
+
+
+<a id="ciclodevida"></a>
+##  Ciclo de vida da instância Vue
+
+> Todo o ciclo de como é feito a instância.
+ 
+```html
+<meta charset="UTF-8">
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+    <h1>{{ titulo }}</h1>
+    <button @click="titulo += '#'">Alterar Titulo</button>
+    <button @click="$destroy()">Destruir</button>
+</div>
+
+<script>
+    const vm = new Vue({
+        el: '#app',
+        data: {
+            titulo: 'Ciclo de vida'
+        },
+        beforeCreate() {
+            console.log('Antes de criar')
+        },
+        created(){
+            console.log('Criado')
+        },
+        beforeMount() {
+            console.log('Antes de montar! (DOM)')
+        },
+        mounted() {
+            console.log('DOM montada')
+        },
+        beforeUpdate() {
+            console.log('Antes de atualizar')
+        },
+        update(){
+            console.log('Atualizado')
+        },
+        beforeDestroy() {
+            console.log('Antes de destruir')
+        },
+        destroyed() {
+            console.log('Destruido')
+        },
+    })
 </script>
 ```
 **[⬆ Voltar para o índice](#capitulo3)**
