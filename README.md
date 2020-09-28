@@ -1532,7 +1532,7 @@ se fosse passado como na instância, todo componentes teriam os mesmo dados alte
 
 # Capítulo 4: Fluxo de Desenvolvimento "Real" Usando Vue CLI
 
-<a id="capitulo4"></a>
+<a id="node"></a>
 ##  Ciclo de vida da instância Vue
 
 > Para esse capítulo precisamos usar o node.js.
