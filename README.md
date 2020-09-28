@@ -57,7 +57,7 @@ Esse manual foi feito por mim com base no curso da Udemy:
 * [Instalando o Vue CLI e Criando um Novo Projeto](#instalandovuecli)
 * [Entendendo os Arquivos ".vue"](#entendendoarquivovue)
 * [Como Construir sua APP para Produção"](#appproducao)
-* [Criando Preset"](#preset)
+* [Criando Preset](#preset)
 
 # Capítulo 1: Usando VueJS para Interagir com a DOM 
 <a id="hello"></a>
