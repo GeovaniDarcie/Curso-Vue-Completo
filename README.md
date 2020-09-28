@@ -56,6 +56,7 @@ Esse manual foi feito por mim com base no curso da Udemy:
 * [Por que Precisamos de um Servidor Web?](#servidorNode)
 * [Instalando o Vue CLI e Criando um Novo Projeto](#instalandovuecli)
 * [Entendendo os Arquivos ".vue"](#entendendoarquivovue)
+* [Como Construir sua APP para Produção"](#appproducao)
 
 # Capítulo 1: Usando VueJS para Interagir com a DOM 
 <a id="hello"></a>
@@ -1597,8 +1598,6 @@ npm run serve
 dentro de uma div. Na parte do script, vamos ter as mesmas propriedades da instância Vue, faça um teste com **data**, mas lembre-se que por ser
 componente, data precisa ser usada como função, para que seus dados não sejam iguais para todos os componentes. Adicione um estilo também, pegando pelo id.
 
-> Com o vetur, escrevendo "sc" e 
-
 ```html
 <template>
   <div  id="app">
@@ -1625,6 +1624,21 @@ export default {
 </style>
 ```
 
+
+**[⬆ Voltar para o índice](#capitulo4)**
+
+
+<a id="appproducao"></a>
+##  Como Construir sua APP para Produção
+
+> Repare que não existe um arquivo app.js, esse arquivo javascript fica em memória. Para gerar esses arquivos e as pastar de produção,
+precisamos usar o comando:
+
+```
+npm run build
+```
+> Repare que gerou a pasta **dist**, agora teremos nosso arquivo **html** com uma única linha, para ser o mais pequeno possível, agora sim temos os arquivos js
+gerados. Com o comando npm run build, tiramos o arquivo js de da memória e de fato colocamos no disco.
 
 **[⬆ Voltar para o índice](#capitulo4)**
 
