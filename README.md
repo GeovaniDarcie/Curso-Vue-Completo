@@ -52,7 +52,7 @@ Esse manual foi feito por mim com base no curso da Udemy:
 
 <a id="capitulo4"></a>
 ### Capítulo 4: Fluxo de Desenvolvimento "Real" Usando Vue CLI
-* [Instalando o node](#node)
+* [Instalando o Node.JS](#node)
 * [Por que Precisamos de um Servidor Web?](#servidorNode)
 
 # Capítulo 1: Usando VueJS para Interagir com a DOM 
@@ -1533,7 +1533,7 @@ se fosse passado como na instância, todo componentes teriam os mesmo dados alte
 # Capítulo 4: Fluxo de Desenvolvimento "Real" Usando Vue CLI
 
 <a id="node"></a>
-##  Ciclo de vida da instância Vue
+## Instalando o Node.JS
 
 > Para esse capítulo precisamos usar o node.js.
 
@@ -1543,6 +1543,7 @@ se fosse passado como na instância, todo componentes teriam os mesmo dados alte
 [Download node](https://nodejs.org/en/)
 
 > Baixe a versão LTS, que é mais estável.
+
 **[⬆ Voltar para o índice](#capitulo4)**
 
 
