@@ -54,6 +54,8 @@ Esse manual foi feito por mim com base no curso da Udemy:
 ### Capítulo 4: Fluxo de Desenvolvimento "Real" Usando Vue CLI
 * [Instalando o Node.JS](#node)
 * [Por que Precisamos de um Servidor Web?](#servidorNode)
+* [Instalando o Vue CLI e Criando um Novo Projeto](#instalandovuecli)
+* [Entendendo os Arquivos ".vue"](#entendendoarquivovue)
 
 # Capítulo 1: Usando VueJS para Interagir com a DOM 
 <a id="hello"></a>
@@ -1538,6 +1540,8 @@ se fosse passado como na instância, todo componentes teriam os mesmo dados alte
 > Para esse capítulo precisamos usar o node.js.
 
 > vamos usar também o NPM, que é um gerenciador de pacotes para node.js.
+
+>Instale o plugin **vetur** no vs code.
  
 
 [Download node](https://nodejs.org/en/)
@@ -1561,6 +1565,66 @@ protocólo HTTP (servidor).
 
 > Além do vue CLI te dar toda a estrutura do projeto, as configurações do projeto, build para desenvolvimento, que inicia um servidor, tem um 
 build de produção também
+
+**[⬆ Voltar para o índice](#capitulo4)**
+
+
+<a id="instalandovuecli"></a>
+##  Instalando o Vue CLI e Criando um Novo Projeto
+
+> Para instalar o vue CLI na sua máquina usando NPM, use o comando:
+```
+npm i -g @vue/cli
+```
+
+> Agora o comando "vue" está disponível, para criar um novo projeto, basta usar o comando:
+```
+vue create (nomeprojeto)
+```
+
+> Agora use os comandos indicados para entrar na pasta e para iniciar um servidor:
+```
+npm run serve
+```
+
+**[⬆ Voltar para o índice](#capitulo4)**
+
+
+<a id="entendaarquivovue"></a>
+##  Entendendo os Arquivos ".vue"
+
+> Repare que o arquivo App.vue tem 3 secções **template**, **script** e **style**, faça um teste apagando tudo e escreva "olá mundo" no template,
+dentro de uma div. Na parte do script, vamos ter as mesmas propriedades da instância Vue, faça um teste com **data**, mas lembre-se que por ser
+componente, data precisa ser usada como função, para que seus dados não sejam iguais para todos os componentes. Adicione um estilo também, pegando pelo id.
+
+> Com o vetur, escrevendo "sc" e 
+
+```html
+<template>
+  <div  id="app">
+      {{ titulo }}
+      <button @click="titulo += '#'">Alterar</button>
+  </div>
+</template>
+
+<script>
+export default {
+  data: function(){
+    return{
+      titulo: "Teste data usando Vue.JS"
+    }
+  }
+}
+</script>
+
+<style>
+  #app{
+    background-color: chocolate;
+    color: #ffffff;
+  }
+</style>
+```
+
 
 **[⬆ Voltar para o índice](#capitulo4)**
 
