@@ -58,6 +58,7 @@ Esse manual foi feito por mim com base no curso da Udemy:
 * [Entendendo os Arquivos ".vue"](#entendendoarquivovue)
 * [Como Construir sua APP para Produção"](#appproducao)
 * [Criando Preset](#preset)
+* [Adicionando plugins ao projeto](#adicionandopluginselectron)
 
 # Capítulo 1: Usando VueJS para Interagir com a DOM 
 <a id="hello"></a>
@@ -1655,6 +1656,32 @@ para ficar no package.json e depois em salvar. Por fim escolha o nome do preset.
 dentro dele.
 
 **[⬆ Voltar para o índice](#capitulo4)**
+
+<a id="adicionandopluginselectron"></a>
+## Adicionando Plugin electron (para rodar a aplicação no desktop
+
+> Entre em package.json, e veja nas devDependencies, alguns plugins oficionais, sabemos disso pois começa com @vue/cli-plugin-babel, agora
+plugins criados por terceiros, usa o prefixo vue-cli-plugin, na nossa aplicação vamos usar o plugin electron-builder, como o prefixo é padrão, 
+para adicionar ao projeto basta só usar o nome do plugin, use o comando:
+```
+vue add electron-builder
+```
+> Esse plugin é para construir sua aplicação para desktop. Use o comando criado no package.json, que é:
+
+```
+npm run electron:serve
+```
+
+> Ele abrirá sua aplicação no desktop.
+
+> Para mais opções adicione também o plugin:
+
+```
+vue add vuetify
+```
+
+**[⬆ Voltar para o índice](#capitulo4)**
+
 
 
 
