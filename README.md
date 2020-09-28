@@ -49,6 +49,12 @@ Esse manual foi feito por mim com base no curso da Udemy:
 * [Usando Componentess](#usandocomponentes)
 * [O Ciclo de Vida da Instância Vue](#ciclodevida)
 
+
+<a id="capitulo4"></a>
+### Capítulo 4: Fluxo de Desenvolvimento "Real" Usando Vue CLI
+* [Instalando o node](#node)
+* [Por que Precisamos de um Servidor Web?](#servidorNode)
+
 # Capítulo 1: Usando VueJS para Interagir com a DOM 
 <a id="hello"></a>
 ## Hello World :raised_hand:
@@ -1522,6 +1528,40 @@ se fosse passado como na instância, todo componentes teriam os mesmo dados alte
 </script>
 ```
 **[⬆ Voltar para o índice](#capitulo3)**
+
+
+# Capítulo 4: Fluxo de Desenvolvimento "Real" Usando Vue CLI
+
+<a id="capitulo4"></a>
+##  Ciclo de vida da instância Vue
+
+> Para esse capítulo precisamos usar o node.js.
+
+> vamos usar também o NPM, que é um gerenciador de pacotes para node.js.
+ 
+
+[Download node](https://nodejs.org/en/)
+
+> Baixe a versão LTS, que é mais estável.
+**[⬆ Voltar para o índice](#capitulo4)**
+
+
+<a id="servidorNode"></a>
+##  Por que Precisamos de um Servidor Web?
+
+> Apesar de que o vue.js executa no client (se abrirmos o arquivo, estamos simulando o que o usuário vai ver), esse arquivo foi servido através de um 
+protocólo HTTP (servidor).
+
+> O protocólo HTTP não tem as mesmas funcionalidades do que um protocólo do tipo File ( que é quando abrimos o arquivo na nossa máquina).
+
+> Logo, o servidor é importante para testarmos a aplicação em cenários mais realista ( Requisições Ajax precisam de um servidor).
+
+> O próprio vue CLI internamente tem um servidor baseado em node, todo configurado, com auto reload e etc.
+
+> Além do vue CLI te dar toda a estrutura do projeto, as configurações do projeto, build para desenvolvimento, que inicia um servidor, tem um 
+build de produção também
+
+**[⬆ Voltar para o índice](#capitulo4)**
 
 
 
