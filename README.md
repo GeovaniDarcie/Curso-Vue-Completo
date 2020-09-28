@@ -62,6 +62,7 @@ Esse manual foi feito por mim com base no curso da Udemy:
 
 <a id="capitulo5"></a>
 ### Capítulo 5: Introdução aos Componentes
+* [Criando um componente](#criandocomponente)
 
 # Capítulo 1: Usando VueJS para Interagir com a DOM 
 <a id="hello"></a>
@@ -1787,5 +1788,6 @@ export default {
 </script>
 ```
 
+**[⬆ Voltar para o índice](#capitulo5)**
 
 
