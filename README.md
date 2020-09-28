@@ -60,6 +60,9 @@ Esse manual foi feito por mim com base no curso da Udemy:
 * [Criando Preset](#preset)
 * [Adicionando Plugin electron (para rodar a aplicação no desktop)](#adicionandopluginselectron)
 
+<a id="capitulo5"></a>
+### Capítulo 5: Introdução aos Componentes
+
 # Capítulo 1: Usando VueJS para Interagir com a DOM 
 <a id="hello"></a>
 ## Hello World :raised_hand:
@@ -1682,6 +1685,107 @@ vue add vuetify
 
 **[⬆ Voltar para o índice](#capitulo4)**
 
+
+### Capítulo 5: Introdução aos Componentes
+
+
+<a id="criandocomponente"></a>
+##  Criando um componente
+
+> Depois de criado a aplicação com Vue create, vamos criar um componente **Contador.vue** dentro da pasta src.
+ 
+```html
+<template>
+    <div class="contador">
+        <span>{{ contador }}</span>
+        <button @click="adicionar">+</button>
+        <button @click="subtrair">-</button>
+    </div>
+</template>
+
+<script>
+export default {
+    data(){
+        return{
+            contador: 0
+        }
+    },
+
+    methods: {
+        adicionar(){
+            this.contador++
+        },
+
+        subtrair(){
+            this.contador--
+        }
+    }
+}
+</script>
+
+<style>
+    .contador span{
+        border-bottom: 1px solid #CCC;
+        height: 30px;
+        padding: 5px 25px;
+    }
+
+    .contador button{
+        height: 30px;
+        width: 30px;
+        border-radius: 15px;
+        background-color: coral;
+        color: #fff;
+        margin-left: 10px;
+        outline: none;
+    }
+</style>
+```
+
+> Dentro do arquivo **main.js** vamos importar esse componente:
+
+```html
+ import Contador from './Contador.vue'
+```
+
+> Depois declarar esse componente como global ( pode ser usado em qualquer template), passando o nome que ele será usado:
+```html
+ Vue.component('app-contador', Contador)
+```
+
+> O arquivo main.js completo ficará assim:
+```html
+ import Vue from 'vue'
+import App from './App.vue'
+import Contador from './Contador.vue'
+
+Vue.config.productionTip = false
+
+Vue.component('app-contador', Contador)
+
+new Vue({
+  render: h => h(App),
+}).$mount('#app')
+
+```
+
+> Como o arquivo App.vue sempre começará a aplicação, podemos colocar o componente nele como se fosse um elemento <app-contador /> :
+
+```html
+<template>
+<div id="app">
+   <h1>Contadores</h1> 
+   <app-contador />
+   <app-contador />
+   <app-contador />
+</div>
+</template>
+
+<script>
+export default {
+}
+</script>
+```
 
 
 
