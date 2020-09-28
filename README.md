@@ -1767,7 +1767,6 @@ Vue.component('app-contador', Contador)
 new Vue({
   render: h => h(App),
 }).$mount('#app')
-
 ```
 
 > Como o arquivo App.vue sempre começará a aplicação, podemos colocar o componente nele como se fosse um elemento <app-contador /> :
