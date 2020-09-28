@@ -57,6 +57,7 @@ Esse manual foi feito por mim com base no curso da Udemy:
 * [Instalando o Vue CLI e Criando um Novo Projeto](#instalandovuecli)
 * [Entendendo os Arquivos ".vue"](#entendendoarquivovue)
 * [Como Construir sua APP para Produção"](#appproducao)
+* [Criando Preset"](#preset)
 
 # Capítulo 1: Usando VueJS para Interagir com a DOM 
 <a id="hello"></a>
@@ -1642,6 +1643,18 @@ gerados. Com o comando npm run build, tiramos o arquivo js de da memória e de f
 
 **[⬆ Voltar para o índice](#capitulo4)**
 
+<a id="preset"></a>
+## Criando Preset
+
+> Quando executamos o comando **vue create (nome)** aparece a opção para escolher um preset (que são plugins e configurações já definidos. Escolha
+a opção para escolher manualmente os plugins, agora com a tecla de espaço, marque algumas opções, por exemplo: PWA, router, Vuex, Css Pre-processors, depois
+tecle enter e escolha 2x. De um sim (Y). Escolha Sass/SCSS (with node-sass). Escolha a primeira opção e depois a primeira novamente. Escolha
+para ficar no package.json e depois em salvar. Por fim escolha o nome do preset. Pronto, está criando um preset.
+
+> Agora, quando começar um novo projeto, irá aparecer o seu preset como escolha, ele terá tudo configurado como foi feito. O seu projeto terá mais coisas
+dentro dele.
+
+**[⬆ Voltar para o índice](#capitulo4)**
 
 
 
