@@ -1838,7 +1838,10 @@ preciso escrever **scoped** no style.
 </style>
 ```
 
-O estilo é transmitido para o filho direto do componente, mas não para o filho do filho, ou seja, ele não vai se propagar indefinidamente!
+> O estilo é transmitido para o filho direto do componente, mas não para o filho do filho, ou seja, ele não vai se propagar indefinidamente!
+> Veja em inspecionar elemento, que é gerado uma propriedade no elemento, com um hash para identificar cada um deles, exemplo de como vai
+aparecer : **data-v-6cbbf471** , isso é o vue aplicando o estilo nos elementos. Para procurar os que são afetados pelo estilo, basta escrever
+isso no console, por exemplo: **document.querySelectorAll('div[data-v-6cbbf471]')**
 
 **[⬆ Voltar para o índice](#capitulo5)**
 
