@@ -64,6 +64,7 @@ Esse manual foi feito por mim com base no curso da Udemy:
 ### Capítulo 5: Introdução aos Componentes
 * [Criando um componente](#criandocomponente)
 * [Declaração de componentes](#declaracaocomponentes)
+* [Usando CSS com Escopo de Componente(scoped)](#scoped)
 
 # Capítulo 1: Usando VueJS para Interagir com a DOM 
 <a id="hello"></a>
@@ -1809,6 +1810,35 @@ export default {
     components: { 'app-contador' : Contador }    
  }
 ```
+
+**[⬆ Voltar para o índice](#capitulo5)**
+
+
+
+<a id="scoped"></a>
+## Usando CSS com Escopo de Componente (scoped)
+
+> Quando definimos um estilo para o nosso componente, esse estilo vai valer para todos os elementos, exemplo:
+
+```html
+<style>
+    div {
+        border: 1px solid red;
+    }
+</style>
+```
+> Esse estilo da div vai valer para todas os componentes do meu projeto. Para que o estilo fique somente para o componente específico, é
+preciso escrever **scoped** no style.
+
+```html
+<style scoped>
+    div {
+        border: 1px solid red;
+    }
+</style>
+```
+
+O estilo é transmitido para o filho direto do componente, mas não para o filho do filho, ou seja, ele não vai se propagar indefinidamente!
 
 **[⬆ Voltar para o índice](#capitulo5)**
 
