@@ -1796,13 +1796,13 @@ export default {
 
 > Declaração global, qualquer template tem acesso:
 
-```html
+```
  Vue.component('app-contadores', Contadores)
 ```
 
 > Declaração local, apenas o componente que ele foi declarado tem acesso:
 
-```html
+```
  import Contador from './Contador.vue'
 
  export default {
