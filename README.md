@@ -56,7 +56,7 @@ Esse manual foi feito por mim com base no curso da Udemy:
 * [Por que Precisamos de um Servidor Web?](#servidorNode)
 * [Instalando o Vue CLI e Criando um Novo Projeto](#instalandovuecli)
 * [Entendendo os Arquivos ".vue"](#entendendoarquivovue)
-* [Como Construir sua APP para Produção"](#appproducao)
+* [Como Construir sua APP para Produção](#appproducao)
 * [Criando Preset](#preset)
 * [Adicionando Plugin electron (para rodar a aplicação no desktop)](#adicionandopluginselectron)
 
