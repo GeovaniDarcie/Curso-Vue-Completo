@@ -63,6 +63,7 @@ Esse manual foi feito por mim com base no curso da Udemy:
 <a id="capitulo5"></a>
 ### Capítulo 5: Introdução aos Componentes
 * [Criando um componente](#criandocomponente)
+* [Declaração de componentes](#declaracaocomponentes)
 
 # Capítulo 1: Usando VueJS para Interagir com a DOM 
 <a id="hello"></a>
@@ -1785,6 +1786,28 @@ new Vue({
 export default {
 }
 </script>
+```
+
+**[⬆ Voltar para o índice](#capitulo5)**
+
+
+<a id="declaracaocomponentes"></a>
+## Declaração de componentes
+
+> Declaração global, qualquer template tem acesso:
+
+```html
+ Vue.component('app-contadores', Contadores)
+```
+
+> Declaração local, apenas o componente que ele foi declarado tem acesso:
+
+```html
+ import Contador from './Contador.vue'
+
+ export default {
+    components: { 'app-contador' : Contador }    
+ }
 ```
 
 **[⬆ Voltar para o índice](#capitulo5)**
