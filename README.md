@@ -65,6 +65,7 @@ Esse manual foi feito por mim com base no curso da Udemy:
 * [Criando um componente](#criandocomponente)
 * [Declaração de componentes](#declaracaocomponentes)
 * [Usando CSS com Escopo de Componente(scoped)](#scoped)
+* [Nomes para componentes](#nomescomponentes)
 
 # Capítulo 1: Usando VueJS para Interagir com a DOM 
 <a id="hello"></a>
@@ -1842,6 +1843,39 @@ preciso escrever **scoped** no style.
 > Veja em inspecionar elemento, que é gerado uma propriedade no elemento, com um hash para identificar cada um deles, exemplo de como vai
 aparecer : **data-v-6cbbf471** , isso é o vue aplicando o estilo nos elementos. Para procurar os que são afetados pelo estilo, basta escrever
 isso no console, por exemplo: **document.querySelectorAll('div[data-v-6cbbf471]')**
+
+**[⬆ Voltar para o índice](#capitulo5)**
+
+
+<a id="nomescomponentes"></a>
+## Nomes para componentes
+
+> Lembrando que se for definr um nome com hífen, é preciso usar aspas em volta, mas se exportar o componente usando camel case ou pascal case,
+posso simplesmente usar o hífen aonde a letra fica maíscula. Ex: 
+
+```html
+<app-usuario-info />
+
+
+import AppUsuarioInfo from './UsuarioInfo'
+
+export default {
+    components: { AppUsuarioInfo }
+}
+```
+
+> Usando aspas em volta ficaria assim:
+```html
+<app-usuario-info />
+
+
+import AppUsuarioInfo from './UsuarioInfo'
+
+export default {
+    components: { 'app-usuario-info' : AppUsuarioInfo }
+}
+```
+
 
 **[⬆ Voltar para o índice](#capitulo5)**
 
