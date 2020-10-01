@@ -2018,3 +2018,81 @@ uma forma de tratar esse erro é especificar o tipo da propriedade a ser recebid
 **[⬆ Voltar para o índice](#capitulo5)**
 
 
+<a id="nomescomponentes"></a>
+## Comunicação Indireta com Eventos Personalizados
+
+> Existe uma forma de passar o evento do componente filho para o componente pai, passando dentro da função: 
+
+```javascript
+     reiniciarNome(){
+            this.nome = "Pedro",
+            this.$emit('nomeMudou', this.nome)
+        }
+```
+> Estou criando um evento chamado "nomeMudou", que está associado com a propriedade "nome".
+> Agora é só "ouvir" esse evento, como se fosse um evento normal (@click ou qualquer outro).
+
+```javascript
+    <app-usuario-info :nome="nome" @nomeMudou="nome = $event"/>
+```
+
+> Dentro do componente pai eu estou passando o evento. o $event, vai ter o valor do "this.nome". No caso estou alterando o valor da variável nome,
+com o $event.
+
+> Posso também, passar um objeto no **this.$emit** : 
+```javascript
+     reiniciarNome(){
+            const antigo = this.nome
+            this.nome = "Pedro",
+            this.$emit('nomeMudou', {
+              novo: this.nome,
+              antigo
+            })
+        }
+```
+> Agora consigo acessar essas propriedades usando **$event.novo** ou **$event.antigo**
+```javascript
+     <div class="componentes">
+            <app-usuario-info 
+                :nome="nome" 
+                @nomeMudou="nome = $event.antigo + $event.novo "/>
+            <app-usuario-editar />
+        </div>
+```
+
+<a id="nomescomponentes"></a>
+## Comunicação Indireta com Callback
+
+> Outra forma de comunicação entre filho e pai, é ultilizar callbacks 
+
+```javascript
+     <div class="componentes">
+            <app-usuario-info 
+                :nome="nome" 
+                :reiniciarFn="reiniciarNome"/>
+            <app-usuario-editar />
+        </div>
+```
+> No componente pai, estou passando uma função **reiniciarNome** pela propriedade **ReiniciarFn**
+
+```javascript
+      props: {
+        nome: {
+            type: String,
+            require: true
+        },
+
+        reiniciarFn: Function
+    },
+```
+
+> Agora delclaro a função nas propriedades do componente filho, do tipo **Function**.
+
+> E posso chamar essa propriedade disparando um evento como o click:
+```javascript
+   <button @click="reiniciarFn">Reiniciar Nome (call back)</button>
+```
+
+**[⬆ Voltar para o índice](#capitulo5)**
+
+
