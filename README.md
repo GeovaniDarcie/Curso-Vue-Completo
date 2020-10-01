@@ -1550,14 +1550,14 @@ se fosse passado como na instância, todo componentes teriam os mesmo dados alte
 
 > Para esse capítulo precisamos usar o node.js.
 
-> vamos usar também o NPM, que é um gerenciador de pacotes para node.js.
+> Vamos usar também o NPM, que é um gerenciador de pacotes para node.js.
 
 >Instale o plugin **vetur** no vs code.
  
 
 [Download node](https://nodejs.org/en/)
 
-> Baixe a versão LTS, que é mais estável.
+> Baixe a versão LTS do **node**, que é mais estável.
 
 **[⬆ Voltar para o índice](#capitulo4)**
 
@@ -1570,12 +1570,12 @@ protocólo HTTP (servidor).
 
 > O protocólo HTTP não tem as mesmas funcionalidades do que um protocólo do tipo File ( que é quando abrimos o arquivo na nossa máquina).
 
-> Logo, o servidor é importante para testarmos a aplicação em cenários mais realista ( Requisições Ajax precisam de um servidor).
+> Logo, o servidor é importante para testarmos a aplicação em cenários mais realistas ( Requisições Ajax precisam de um servidor).
 
-> O próprio vue CLI internamente tem um servidor baseado em node, todo configurado, com auto reload e etc.
+> O próprio Vue CLI internamente tem um servidor baseado em node, todo configurado, com auto reload e etc.
 
-> Além do vue CLI te dar toda a estrutura do projeto, as configurações do projeto, build para desenvolvimento, que inicia um servidor, tem um 
-build de produção também
+> Vue CLI te da toda a estrutura do projeto, configurações do projeto, build para desenvolvimento (que inicia um servidor),
+build de produção, etc.
 
 **[⬆ Voltar para o índice](#capitulo4)**
 
@@ -1584,17 +1584,17 @@ build de produção também
 ##  Instalando o Vue CLI e Criando um Novo Projeto
 
 > Para instalar o vue CLI na sua máquina usando NPM, use o comando:
-```
+```javascript
 npm i -g @vue/cli
 ```
 
-> Agora o comando "vue" está disponível, para criar um novo projeto, basta usar o comando:
-```
+> Agora o comando "vue" está disponível. Para criar um novo projeto, basta usar o comando:
+```javascript
 vue create (nomeprojeto)
 ```
 
-> Agora use os comandos indicados para entrar na pasta e para iniciar um servidor:
-```
+> Agora use os comandos indicados para entrar na pasta (cd) e para iniciar um servidor:
+```javascript
 npm run serve
 ```
 
