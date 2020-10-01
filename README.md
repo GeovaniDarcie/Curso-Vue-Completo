@@ -1604,9 +1604,9 @@ npm run serve
 <a id="entendaarquivovue"></a>
 ##  Entendendo os Arquivos ".vue"
 
-> Repare que o arquivo App.vue tem 3 secções **template**, **script** e **style**, faça um teste apagando tudo e escreva "olá mundo" no template,
-dentro de uma div. Na parte do script, vamos ter as mesmas propriedades da instância Vue, faça um teste com **data**, mas lembre-se que por ser
-componente, data precisa ser usada como função, para que seus dados não sejam iguais para todos os componentes. Adicione um estilo também, pegando pelo id.
+> Repare que o arquivo App.vue tem 3 secções: **template**, **script** e **style**. Faça um teste apagando tudo e escreva "olá mundo" no template,
+dentro de uma div. Na parte do script, vamos ter as mesmas propriedades da instância Vue, faça um teste com **data**, mas lembre-se que por ser um
+componente, data precisa ser usada como função, para que seus dados não sejam iguais para todos os componentes usados. Adicione um estilo também, pegando pelo id.
 
 ```html
 <template>
@@ -1648,19 +1648,26 @@ precisamos usar o comando:
 npm run build
 ```
 > Repare que gerou a pasta **dist**, agora teremos nosso arquivo **html** com uma única linha, para ser o mais pequeno possível, agora sim temos os arquivos js
-gerados. Com o comando npm run build, tiramos o arquivo js de da memória e de fato colocamos no disco.
+gerados. Com o comando **npm run build**, tiramos o arquivo js da memória e de fato colocamos no disco.
 
 **[⬆ Voltar para o índice](#capitulo4)**
 
 <a id="preset"></a>
 ## Criando Preset
 
-> Quando executamos o comando **vue create (nome)** aparece a opção para escolher um preset (que são plugins e configurações já definidos. Escolha
-a opção para escolher manualmente os plugins, agora com a tecla de espaço, marque algumas opções, por exemplo: PWA, router, Vuex, Css Pre-processors, depois
-tecle enter e escolha 2x. De um sim (Y). Escolha Sass/SCSS (with node-sass). Escolha a primeira opção e depois a primeira novamente. Escolha
-para ficar no package.json e depois em salvar. Por fim escolha o nome do preset. Pronto, está criando um preset.
+> Quando executamos o comando **vue create (nome)** aparece a opção para escolher um preset (que são plugins e configurações já definidos). Escolha
+a opção para definir manualmente os plugins, agora com a tecla de espaço, marque algumas opções, por exemplo: PWA, router, Vuex, Css Pre-processors, depois
+tecle enter e siga esses passos: 
+             2x. 
+             De um sim (Y). 
+             Sass/SCSS (with node-sass). P
+             Primeira opção 
+             Primeira novamente. 
+             Package.json
+             Salvar. 
+             Por fim escolha o nome do preset. Pronto, está criando um preset.
 
-> Agora, quando começar um novo projeto, irá aparecer o seu preset como escolha, ele terá tudo configurado como foi feito. O seu projeto terá mais coisas
+> Agora, quando começar um novo projeto, irá aparecer o seu preset como opção, ele terá tudo configurado como foi feito. O seu projeto terá mais coisas
 dentro dele.
 
 **[⬆ Voltar para o índice](#capitulo4)**
@@ -1668,15 +1675,15 @@ dentro dele.
 <a id="adicionandopluginselectron"></a>
 ## Adicionando Plugin electron (para rodar a aplicação no desktop)
 
-> Entre em package.json, e veja nas devDependencies, alguns plugins oficionais, sabemos disso pois começa com @vue/cli-plugin-babel, agora
-plugins criados por terceiros, usa o prefixo vue-cli-plugin, na nossa aplicação vamos usar o plugin electron-builder, como o prefixo é padrão, 
-para adicionar ao projeto basta só usar o nome do plugin, use o comando:
-```
+> Entre em package.json, e veja nas devDependencies, alguns plugins oficiais, sabemos disso pois começa com @vue/cli-plugin-babel, agora
+plugins criados por terceiros usam o prefixo vue-cli-plugin. Na nossa aplicação vamos usar o plugin electron-builder, como o prefixo é padrão, 
+para adicionar ao projeto basta usar o nome do plugin sem o prefixo, use o comando:
+```javascript
 vue add electron-builder
 ```
-> Esse plugin é para construir sua aplicação para desktop. Use o comando criado no package.json, que é:
+> Esse plugin é vai construir sua aplicação para desktop. Use o comando criado dentro do package.json, que é:
 
-```
+```javascript
 npm run electron:serve
 ```
 
@@ -1684,7 +1691,7 @@ npm run electron:serve
 
 > Para mais opções adicione também o plugin:
 
-```
+```javascript
 vue add vuetify
 ```
 
@@ -1697,7 +1704,7 @@ vue add vuetify
 <a id="criandocomponente"></a>
 ##  Criando um componente
 
-> Depois de criado a aplicação com Vue create, vamos criar um componente **Contador.vue** dentro da pasta src.
+> Depois de criado a aplicação com **vue create**, vamos criar um componente **Contador.vue** dentro da pasta src.
  
 ```html
 <template>
@@ -1749,18 +1756,18 @@ export default {
 
 > Dentro do arquivo **main.js** vamos importar esse componente:
 
-```html
+```javascript
  import Contador from './Contador.vue'
 ```
 
-> Depois declarar esse componente como global ( pode ser usado em qualquer template), passando o nome que ele será usado:
-```html
+> Depois declarar esse componente como global ( global: pode ser usado em qualquer template), passando o nome que será usado:
+```javascript
  Vue.component('app-contador', Contador)
 ```
 
 > O arquivo main.js completo ficará assim:
-```html
- import Vue from 'vue'
+```javascript
+import Vue from 'vue'
 import App from './App.vue'
 import Contador from './Contador.vue'
 
@@ -1799,13 +1806,13 @@ export default {
 
 > Declaração global, qualquer template tem acesso:
 
-```
+```javascript
  Vue.component('app-contadores', Contadores)
 ```
 
 > Declaração local, apenas o componente que ele foi declarado tem acesso:
 
-```
+```javascript
  import Contador from './Contador.vue'
 
  export default {
@@ -1854,7 +1861,7 @@ isso no console, por exemplo: **document.querySelectorAll('div[data-v-6cbbf471]'
 > Lembrando que se for definr um nome com hífen, é preciso usar aspas em volta, mas se exportar o componente usando camel case ou pascal case,
 posso simplesmente usar o hífen aonde a letra fica maíscula. Ex: 
 
-```html
+```javascript
 <app-usuario-info />
 
 
