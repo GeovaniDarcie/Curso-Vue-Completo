@@ -66,6 +66,7 @@ Esse manual foi feito por mim com base no curso da Udemy:
 * [Declaração de componentes](#declaracaocomponentes)
 * [Usando CSS com Escopo de Componente(scoped)](#scoped)
 * [Nomes para componentes](#nomescomponentes)
+* [Comunicação direta com props](#props)
 
 # Capítulo 1: Usando VueJS para Interagir com a DOM 
 <a id="hello"></a>
@@ -1876,6 +1877,92 @@ export default {
 }
 ```
 
+
+**[⬆ Voltar para o índice](#capitulo5)**
+
+<a id="props"></a>
+## Comunicação direta com props
+
+> Propriedades nas tags são aceitas pelo HTML, por exemplo <div class=""teste> Olá mundo </div>, class é uma propriedade, assim como
+id, charset, entre outras. Agora para passar uma propriedade de um componente para outro, posso criar propriedades personalizadas.
+
+> No componente pai, eu tenho dados como "nome" :
+
+```html
+<template>
+   <div id="pai">
+       <h1>Eu sou o componente pai!</h1>
+       <app-filho />
+   </div>
+</template>
+
+<script>
+import Filho from './Filho.vue'
+
+export default {
+    components: { 'app-filho' : Filho},
+    data() {
+        return {
+            nome: "Joao"
+        }
+    }
+}
+</script>
+```
+
+> Agora eu quero passar esse "nome" para o componente filho, uma forma de fazer isso, é definindo no componente filho,
+a propriedade "props", que vai aceitar propriedades passadas pelo componente pai.
+
+```html
+<template>
+   <div class="filho">
+       <h2>Eu sou o componente Filho!</h2>
+       <p>{{ nome }}</p>
+   </div>
+   
+</template>
+
+<script>
+
+export default {
+    props: ['nome']
+}
+</script>
+
+<style scoped>
+ 
+</style>
+```
+
+> Agora, basta passar a propriedade na tag **app-filho**:
+
+```html
+<template>
+   <div id="pai">
+       <h1>Eu sou o componente pai!</h1>
+       <app-filho :nome="nome"/>
+   </div>
+</template>
+
+<script>
+import Filho from './Filho.vue'
+
+export default {
+    components: { 'app-filho' : Filho},
+    data() {
+        return {
+            nome: "Maria"
+        }
+    }
+}
+</script>
+
+<style>
+   #pai {
+       color: rgb(60, 60, 170)
+   }
+</style>
+```
 
 **[⬆ Voltar para o índice](#capitulo5)**
 
