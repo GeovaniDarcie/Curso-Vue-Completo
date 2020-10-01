@@ -1966,4 +1966,55 @@ export default {
 
 **[⬆ Voltar para o índice](#capitulo5)**
 
+<a id="Validando propriedades"></a>
+## Validando propriedades
+
+> Vamos supor que você tenha uma propriedade **nome** que será passada do componente pai para o filho, e no componente filho ela execute esse método:
+
+```javascript
+  this.nome.split('').reverse().join('')
+```
+> Esse método vai inverter a ordem de nome. Agora imagine que em nome você passe um número, bolean, ou qualquer tipo que não seja string, isso vai gerar um erro,
+uma forma de tratar esse erro é especificar o tipo da propriedade a ser recebida:
+
+```javascript
+  props: {
+        nome: String
+    }
+```
+
+> Dessa forma é mais fácil encontrar o erro no console, eu especifico o tipo esperado, repare que o tipo tem letra maiúscula.
+> Posso também esperar mais de um tipo, dessa forma:
+
+```javascript
+  props: {
+        nome: [String, Array]
+    }
+```
+
+> Também posso abrir minha propriedade nome como se fosse um objeto, dessa forma:
+
+```javascript
+  props: {
+        nome: {
+            type: String,
+            require: true
+        }
+    }
+```
+
+> To dizendo que o tipo é String, é obrigatório que se passe a propriedade, usando o **require: true**
+> Também posso passar a propriedade default, quando nada for passado ele usará o que estiver em default:
+
+```javascript
+  props: {
+        nome: {
+            type: String,
+            default: 'joão'
+        }
+    }
+```
+
+**[⬆ Voltar para o índice](#capitulo5)**
+
 
