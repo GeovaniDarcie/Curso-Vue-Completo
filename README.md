@@ -71,6 +71,7 @@ Esse manual foi feito por mim com base no curso da Udemy:
 * [Comunicação Indireta com Eventos Personalizados](#eventospersonalizados)
 * [Comunicação Indireta com Callback](#callbacks)
 * [Comunicação entre componentes irmãos](#irmaos)
+* [Usando Event Bus para Comunicação entre Componentes Irmã…](#barramento)
 
 # Capítulo 1: Usando VueJS para Interagir com a DOM 
 <a id="hello"></a>
@@ -2117,5 +2118,52 @@ Então: Filho1 altera o pai, e depois o pai altera o valor do filho1 e do filho2
 
 
 **[⬆ Voltar para o índice](#capitulo5)**
+
+
+<a id="barramento"></a>
+## Usando Event Bus para Comunicação entre Componentes Irmãos
+
+> Posso criar dentro da pasta **src** um barramento.js, que irá instanciar uma vue.
+
+**barramento.js**
+```javascript
+   import Vue from 'vue'
+   export default new Vue()
+```
+
+> No componente filho posso imitir alguma evento que causou alguma alteração, usando o barramento:
+
+```javascript
+import barramento from '@/barramento'
+
+export default {
+    props: {
+        idade: Number
+    },
+    methods: {
+        alterarIdade(){
+            this.idade = 33
+            barramento.$emit('idadeMudou', this.idade)
+        }
+    }
+}
+```
+
+> Agora no componente irmão, eu posso ficar ouvindo se esse evento será disparada, e então passar uma callbak pra ele executar:
+
+
+```javascript
+  import barramento from '@/barramento'
+    created(){
+        barramento.$on('idadeMudou', idade => {
+            this.idade = idade
+        })
+    }
+```
+> Repare que estou usando a função **created()** do vue, ela está fora da propriedade methods do componente filho.
+> Pronto, agora os valores serão alterados apenas nos irmãos.
+
+**[⬆ Voltar para o índice](#capitulo5)**
+
 
 
