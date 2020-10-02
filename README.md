@@ -70,6 +70,7 @@ Esse manual foi feito por mim com base no curso da Udemy:
 * [Validando propriedades](#validandopropriedades)
 * [Comunicação Indireta com Eventos Personalizados](#eventospersonalizados)
 * [Comunicação Indireta com Callback](#callbacks)
+* [Comunicação entre componentes irmãos](#irmaos)
 
 # Capítulo 1: Usando VueJS para Interagir com a DOM 
 <a id="hello"></a>
@@ -2096,12 +2097,24 @@ com o $event.
     },
 ```
 
-> Agora delclaro a função nas propriedades do componente filho, do tipo **Function**.
+> Agora declaro a função nas propriedades do componente filho, do tipo **Function**.
 
 > E posso chamar essa propriedade disparando um evento como o click:
 ```javascript
    <button @click="reiniciarFn">Reiniciar Nome (call back)</button>
 ```
+
+**[⬆ Voltar para o índice](#capitulo5)**
+
+<a id="irmaos"></a>
+## Comunicação entre componentes irmãos
+
+> Não existe comunicação direta entre irmãos. Uma forma de fazer, seria:
+o filho gera um evento para o pai, e o pai altera não só o filho que gerou o evento, mas também os outros filhos, se o pai tiver propriedades
+associadas aos filhos.
+ 
+Então: Filho1 altera o pai, e depois o pai altera o valor do filho1 e do filho2.            
+
 
 **[⬆ Voltar para o índice](#capitulo5)**
 
