@@ -67,6 +67,9 @@ Esse manual foi feito por mim com base no curso da Udemy:
 * [Usando CSS com Escopo de Componente(scoped)](#scoped)
 * [Nomes para componentes](#nomescomponentes)
 * [Comunicação direta com props](#props)
+* [Validando propriedades](#validandopropriedades)
+* [Comunicação Indireta com Eventos Personalizados](#eventospersonalizados)
+* [Comunicação Indireta com Callback](#callbacks)
 
 # Capítulo 1: Usando VueJS para Interagir com a DOM 
 <a id="hello"></a>
@@ -1973,7 +1976,7 @@ export default {
 
 **[⬆ Voltar para o índice](#capitulo5)**
 
-<a id="Validando propriedades"></a>
+<a id="validandopropriedades"></a>
 ## Validando propriedades
 
 > Vamos supor que você tenha uma propriedade **nome** que será passada do componente pai para o filho, e no componente filho ela execute esse método:
@@ -2025,7 +2028,7 @@ uma forma de tratar esse erro é especificar o tipo da propriedade a ser recebid
 **[⬆ Voltar para o índice](#capitulo5)**
 
 
-<a id="nomescomponentes"></a>
+<a id="eventospersonalizados"></a>
 ## Comunicação Indireta com Eventos Personalizados
 
 > Existe uma forma de passar o evento do componente filho para o componente pai, passando dentro da função: 
@@ -2067,7 +2070,7 @@ com o $event.
         </div>
 ```
 
-<a id="nomescomponentes"></a>
+<a id="callbacks"></a>
 ## Comunicação Indireta com Callback
 
 > Outra forma de comunicação entre filho e pai, é ultilizar callbacks 
