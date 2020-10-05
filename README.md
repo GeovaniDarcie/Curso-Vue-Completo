@@ -80,6 +80,7 @@ Esse manual foi feito por mim com base no curso da Udemy:
 * [Usando Múltiplos Slots (Slots Nomeados)](#multiplosslots)
 * [Componentes dinâmicos](#componentesdinamicos)
 * [ Mantendo o Componente Dinâmico Vivo](#keepalive)
+* [Métodos de Ciclo de Vida de um Componente Dinâmico](#ciclodevidacomponente)
 
 # Capítulo 1: Usando VueJS para Interagir com a DOM 
 <a id="hello"></a>
@@ -2298,6 +2299,27 @@ possa usar um elemento personalidado do vue, chamado **keep-alive** e envolver o
 > Pronto, agora ele não será mais destruído.
 
 **[⬆ Voltar para o índice](#capitulo6)**
+
+<a id="ciclodevidacomponente"></a>
+##  Métodos de Ciclo de Vida de um Componente Dinâmico
+
+> Consigo observar quando um componente é criado, destruído, ativado ou desativo com esses métodos:
+```javascript
+     created(){
+        console.log('created')
+    },
+    destroyed(){
+        console.log('destroyed')
+    },
+    activated(){
+        console.log('ativo')
+    },
+    deactivated(){
+        console.log('desativado')
+    }
+```
+**[⬆ Voltar para o índice](#capitulo6)**
+
 
 
 
