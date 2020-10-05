@@ -2287,7 +2287,7 @@ alguma propriedade (que corresponde a algum componente com aspas simples) e ent�
 de ciclo vida: created e destroyed, passando um console.log() para observar quando um ou outro é ativado.
 
 > Mas sempre um componente é destruído, se eu quero mante-lo vivo, para que na volta ele mostre o mesmo resultado de antes,
-passa usar um elemento personalidado do vue, chamado **keep-alive** e envolver o meu componente:
+possa usar um elemento personalidado do vue, chamado **keep-alive** e envolver o meu componente:
 
 ```javascript
  <keep-alive>
