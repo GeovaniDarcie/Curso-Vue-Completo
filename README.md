@@ -75,6 +75,8 @@ Esse manual foi feito por mim com base no curso da Udemy:
 
 <a id="capitulo6"></a>
 ### Capítulo 6: Uso Avançado de Componentes
+* [Passando Conteúdo com Slots](#slots)
+* [Como o Conteúdo do Slot é Estilizado](#slotestilo)
 
 # Capítulo 1: Usando VueJS para Interagir com a DOM 
 <a id="hello"></a>
@@ -2169,4 +2171,63 @@ export default {
 **[⬆ Voltar para o índice](#capitulo5)**
 
 
+# Capítulo 6:Uso Avançado de Componentes
+
+<a id="slots"></a>
+## Passando Conteúdo com Slots
+
+> É possível passar conteúdo pelo componente, dentro da tag filho.
+> No componente pai (citacoes), passamos o conteúdo assim dentro do componente filho(citacao):
+```javascript
+  <template>
+    <div class="citacoes">
+        <Citacao>
+            <h1>{{citacoes[indice].autor}}</h1>
+            <p>{{ citacoes[indice].texto }}</p>
+            <h6>{{ citacoes[indice].fonte }}</h6>
+        </Citacao>
+    </div>
+</template>
+```
+
+> Agora no componente citacao passamos apenas a tag **slot**
+```javascript
+ <template>
+    <div class="citacao">
+       <slot></slot>
+    </div>
+  </template>
+```
+
+<a id="slots"></a>
+## Como o Conteúdo do Slot é Estilizado
+
+> O estilo é passado tanto no componente que tem a tag slot, quanto no componente que passa o contéudo, sendo que esse
+o que tem preferência.
+
+> Posso também definir o estilo que quero usando **!important**
+
+```javascript
+   h1 {
+        color: red!important;
+    }
+```
+
+**[⬆ Voltar para o índice](#capitulo6)**
+
+<a id="slotestilo"></a>
+## Como o Conteúdo do Slot é Estilizado
+
+> O estilo é passado tanto no componente que tem a tag slot, quanto no componente que passa o contéudo, sendo que esse
+o que tem preferência.
+
+> Posso também definir o estilo que quero usando **!important**
+
+```javascript
+   h1 {
+        color: red!important;
+    }
+```
+
+**[⬆ Voltar para o índice](#capitulo6)**
 
