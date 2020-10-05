@@ -2249,7 +2249,7 @@ alguma propriedade (que corresponde a algum componente com aspas simples) e ent�
 ```javascript
     <component :is="componente"/>
 ```
-> E dai posso fazer o que eu quiser com a propriedade passada **componente**
+> E dai posso fazer o que eu quiser com a propriedade passada **componente**, nesse caso estou passando 'Citacoes':
 
 ```javascript
  export default {
@@ -2268,8 +2268,8 @@ alguma propriedade (que corresponde a algum componente com aspas simples) e ent�
 <template>
 	<div id="app">
 		<span>
-			<button @click="component = 'Citacoes'">Citações</button>
-			<button @click="component = 'Sobre'">Sobre</button>
+			<button @click="componente = 'Citacoes'">Citações</button>
+			<button @click="componente = 'Sobre'">Sobre</button>
 		</span>
 		<component :is="component"/>
 	</div>
