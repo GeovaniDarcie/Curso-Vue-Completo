@@ -2305,7 +2305,7 @@ possa usar um elemento personalidado do vue, chamado **keep-alive** e envolver o
 
 > Consigo observar quando um componente é criado, destruído, ativado ou desativo com esses métodos:
 ```javascript
-     created(){
+    created(){
         console.log('created')
     },
     destroyed(){
