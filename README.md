@@ -73,6 +73,9 @@ Esse manual foi feito por mim com base no curso da Udemy:
 * [Comunicação entre componentes irmãos](#irmaos)
 * [Usando Event Bus para Comunicação entre Componentes Irmã…](#barramento)
 
+<a id="capitulo6"></a>
+### Capítulo 6: Uso Avançado de Componentes
+
 # Capítulo 1: Usando VueJS para Interagir com a DOM 
 <a id="hello"></a>
 ## Hello World :raised_hand:
