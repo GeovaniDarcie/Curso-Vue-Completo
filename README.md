@@ -78,6 +78,7 @@ Esse manual foi feito por mim com base no curso da Udemy:
 * [Passando Conteúdo com Slots](#slots)
 * [Como o Conteúdo do Slot é Estilizado](#slotestilo)
 * [Usando Múltiplos Slots (Slots Nomeados)](#multiplosslots)
+* [Componentes dinâmicos](#componentesdinamicos)
 
 # Capítulo 1: Usando VueJS para Interagir com a DOM 
 <a id="hello"></a>
@@ -2237,6 +2238,43 @@ o que tem preferência.
    </template>
 ```
 
+
+**[⬆ Voltar para o índice](#capitulo6)**
+
+<a id="componentesdinamicos"></a>
+## Componentes Dinâmicos (Slots Nomeados)
+
+> Existe um elemento personalizado do vue.js chamado **component**, que possuí a propriedade **:is**, aonde eu posso passar
+alguma propriedade (que corresponde a algum componente com aspas simples) e então o vue irá resolver para mim:
+```javascript
+    <component :is="componente"/>
+```
+> E dai posso fazer o que eu quiser com a propriedade passada **componente**
+
+```javascript
+ export default {
+	components: { Citacoes, Sobre },
+	data(){
+		return {
+			componente: 'Citacoes'
+		}
+	}
+}
+```
+
+> Posso por exemplo criar dois botões, aonde o valor de componente será alterado:
+
+```javascript
+<template>
+	<div id="app">
+		<span>
+			<button @click="component = 'Citacoes'">Citações</button>
+			<button @click="component = 'Sobre'">Sobre</button>
+		</span>
+		<component :is="component"/>
+	</div>
+</template>
+```
 
 **[⬆ Voltar para o índice](#capitulo6)**
 
