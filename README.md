@@ -2318,6 +2318,7 @@ possa usar um elemento personalidado do vue, chamado **keep-alive** e envolver o
         console.log('desativado')
     }
 ```
+> Lembrando que os métodos de ativar ou desativar, só seram chamados se o elemento **keep-alive** estiver definido.
 **[⬆ Voltar para o índice](#capitulo6)**
 
 
