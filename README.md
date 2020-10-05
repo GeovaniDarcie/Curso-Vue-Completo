@@ -77,6 +77,7 @@ Esse manual foi feito por mim com base no curso da Udemy:
 ### Capítulo 6: Uso Avançado de Componentes
 * [Passando Conteúdo com Slots](#slots)
 * [Como o Conteúdo do Slot é Estilizado](#slotestilo)
+* [Usando Múltiplos Slots (Slots Nomeados)](#multiplosslots)
 
 # Capítulo 1: Usando VueJS para Interagir com a DOM 
 <a id="hello"></a>
@@ -2215,19 +2216,31 @@ o que tem preferência.
 
 **[⬆ Voltar para o índice](#capitulo6)**
 
-<a id="slotestilo"></a>
-## Como o Conteúdo do Slot é Estilizado
 
-> O estilo é passado tanto no componente que tem a tag slot, quanto no componente que passa o contéudo, sendo que esse
-o que tem preferência.
+<a id="multiplosslots"></a>
+## Usando Múltiplos Slots (Slots Nomeados)
 
-> Posso também definir o estilo que quero usando **!important**
-
+> Consigo passar vários slots, basta colocar a propriedade slot na tag que quero passar no componente pai (citacoes):
 ```javascript
-   h1 {
-        color: red!important;
-    }
+     <Citacao>
+            <p slot="teste">Olá eu estou aqui</p>
+       </Citacao>
 ```
 
+> Agora no componente filho, eu passo na tag slot, a propriedade name:
+```javascript
+   <template>
+    <div class="citacao">
+       <slot></slot>
+       <slot name="teste"></slot>
+    </div>
+   </template>
+```
+
+
 **[⬆ Voltar para o índice](#capitulo6)**
+
+
+
+
 
