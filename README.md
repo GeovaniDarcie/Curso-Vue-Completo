@@ -90,7 +90,7 @@ Esse manual foi feito por mim com base no curso da Udemy:
 
 > Dentro das tags HTML existe um conteúdo de texto, as chaves duplas **{{ }}** funcionam como interpolação do texto com o atributo do Vue.
 
-> Instanciando uma nova Vue **new Vue()** com o construtor, repare que não precisei fazer **v = new Vue()**  pois o Vue já faz todo esse processo de colocar na variável automaticamente.
+> Instanciando uma nova Vue **new Vue()** com o construtor.
  
 > O atributo **el** do Vue, representa qual trecho do HTML vou manipular passando o **ID**.
 
