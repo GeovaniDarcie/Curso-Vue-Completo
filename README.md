@@ -82,6 +82,11 @@ Esse manual foi feito por mim com base no curso da Udemy:
 * [ Mantendo o Componente Dinâmico Vivo](#keepalive)
 * [Métodos de Ciclo de Vida de um Componente Dinâmico](#ciclodevidacomponente)
 
+<a id="capitulo7"></a>
+### Capítulo 7: Manipulando Entrada de Usuário com Formulários
+* [Modificar Entrada de Usuário com Modificadores de Input](#modificadorinput)
+
+
 # Capítulo 1: Usando VueJS para Interagir com a DOM 
 <a id="hello"></a>
 ## Hello World :raised_hand:
@@ -2322,6 +2327,24 @@ possa usar um elemento personalidado do vue, chamado **keep-alive** e envolver o
 **[⬆ Voltar para o índice](#capitulo6)**
 
 
+# Capítulo 7: Manipulando Entrada de Usuário com Formulários
 
+<a id="modificadorinput"></a>
+##  Modificar Entrada de Usuário com Modificadores de Input
+
+> Com a diretiva v-model, cada tecla será refletida no dado, agora se você quiser que seja modificado apenas quando tirar o foco do campo, por exemplo clicar fora
+do campo "e-mail" é só usar **v-model.lazy**, ou seja, o v-model vai ficar com "preguiça" e só modificar depois:
+
+```javascript
+<label nome="E-mail">
+    <input type="text" v-model.lazy="usuario.email">
+</label>
+```
+
+> Temos também o **trim** que tira os espaços em branco no começo e no fim do input
+
+**v-model.trim posso usar também como v.model.lazy.trim**
+
+**[⬆ Voltar para o índice](#capitulo7)**
 
 
