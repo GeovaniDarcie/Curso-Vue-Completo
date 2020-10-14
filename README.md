@@ -84,7 +84,10 @@ Esse manual foi feito por mim com base no curso da Udemy:
 
 <a id="capitulo7"></a>
 ### Capítulo 7: Manipulando Entrada de Usuário com Formulários
-* [Modificar Entrada de Usuário com Modificadores de Input](#modificadorinput)
+* [Modificar Entrada de Usuário com Modificadores de Input: lazy, string e number](#modificadorinput)
+* [Usando <textarea> e Salvando Quebras de Linha](#textareamodel)
+* [Usando Checkboxes e Salvando os Dados em um Array](#checkboxmodel)
+* [Usando radio](#radiomodel)
 
 
 # Capítulo 1: Usando VueJS para Interagir com a DOM 
@@ -2330,7 +2333,7 @@ possa usar um elemento personalidado do vue, chamado **keep-alive** e envolver o
 # Capítulo 7: Manipulando Entrada de Usuário com Formulários
 
 <a id="modificadorinput"></a>
-##  Modificar Entrada de Usuário com Modificadores de Input
+##  Modificar Entrada de Usuário com Modificadores de Input: lazy, trim e number
 
 > Com a diretiva v-model, cada tecla será refletida no dado, agora se você quiser que seja modificado apenas quando tirar o foco do campo, por exemplo clicar fora
 do campo "e-mail" é só usar **v-model.lazy**, ou seja, o v-model vai ficar com "preguiça" e só modificar depois:
@@ -2345,6 +2348,79 @@ do campo "e-mail" é só usar **v-model.lazy**, ou seja, o v-model vai ficar com
 
 **v-model.trim posso usar também como v.model.lazy.trim**
 
+> O v-model.number transforma o valor de string para number, isso é útil pois sempre no input, o valor retornado é uma string.
+
 **[⬆ Voltar para o índice](#capitulo7)**
 
+
+<a id="textareamodel"></a>
+##  Usando <textarea> e Salvando Quebras de Linha
+
+> Podemos usar o textarea com o v-model, o ruim é que quando pulamos a linha, ou deixamos um espaço em branco, isso não é refletido.
+> Para que os espaços em branco sejam preservados precismos usar o style: white-space: pre; -> "Espaços em branco **pre**servados
+
+```javascript
+<label nome="E-mail">
+    <input type="text" v-model.lazy="usuario.email">
+</label>
+```
+
+**[⬆ Voltar para o índice](#capitulo7)**
+
+
+<a id="checkboxmodel"></a>
+##  Usando Checkboxes e Salvando os Dados em um Array
+
+> Com o checkbox armazenamos os dados selecionados dentro um array:
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+   <input type="checkbox" value="ativado" v-model="selecionados"> <label for="">ativado</label>
+   <input type="checkbox" value="desativado" v-model="selecionados"> <label for="">desativado</label>
+   <p>{{selecionados}}</p>
+</div>
+
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            selecionados: []
+        }
+
+    })
+</script>
+```
+
+**[⬆ Voltar para o índice](#capitulo7)**
+
+
+<a id="radiomodel"></a>
+##  Usando radio
+
+> Com o v-model o radio vai selecionar apenas uma opção, basta colocar o v-model nos dois input radio
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+   <input type="radio" value="one" v-model="picked"> <label for="">One</label>
+   <input type="radio" value="Two" v-model="picked"> <label for="">Two</label>
+
+   <p>Picked: {{picked}}</p>
+</div>
+
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            picked: ''
+        }
+
+    })
+</script>
+```
+
+**[⬆ Voltar para o índice](#capitulo7)**
 
