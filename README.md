@@ -88,7 +88,7 @@ Esse manual foi feito por mim com base no curso da Udemy:
 * [Usando <textarea> e Salvando Quebras de Linha](#textareamodel)
 * [Usando Checkboxes e Salvando os Dados em um Array](#checkboxmodel)
 * [Usando radio](#radiomodel)
-* [Manipulando Combobox com <select> e <option>](#selectmodel)
+* [Manipulando Combobox com select e option](#selectmodel)
 
 
 # Capítulo 1: Usando VueJS para Interagir com a DOM 
