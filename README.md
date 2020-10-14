@@ -88,6 +88,7 @@ Esse manual foi feito por mim com base no curso da Udemy:
 * [Usando <textarea> e Salvando Quebras de Linha](#textareamodel)
 * [Usando Checkboxes e Salvando os Dados em um Array](#checkboxmodel)
 * [Usando radio](#radiomodel)
+* [Manipulando Combobox com <select> e <option>](#selectmodel)
 
 
 # Capítulo 1: Usando VueJS para Interagir com a DOM 
@@ -2371,7 +2372,8 @@ do campo "e-mail" é só usar **v-model.lazy**, ou seja, o v-model vai ficar com
 <a id="checkboxmodel"></a>
 ##  Usando Checkboxes e Salvando os Dados em um Array
 
-> Com o checkbox armazenamos os dados selecionados dentro um array:
+> Com o checkbox armazenamos os dados selecionados dentro um array.
+> O v-model vai pegar o que está em value.
 
 ```html
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -2399,7 +2401,8 @@ do campo "e-mail" é só usar **v-model.lazy**, ou seja, o v-model vai ficar com
 <a id="radiomodel"></a>
 ##  Usando radio
 
-> Com o v-model o radio vai selecionar apenas uma opção, basta colocar o v-model nos dois input radio
+> Com o v-model o radio vai selecionar apenas uma opção, basta colocar o v-model nos dois input radio.
+> O valor do v-model é pego pelo value também.
 
 ```html
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -2418,6 +2421,42 @@ do campo "e-mail" é só usar **v-model.lazy**, ou seja, o v-model vai ficar com
             picked: ''
         }
 
+    })
+</script>
+```
+
+**[⬆ Voltar para o índice](#capitulo7)**
+
+
+<a id="selectmodel"></a>
+##  Manipulando Combobox com <select> e <option>
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+    <p>Personagem: </p>
+    <select v-model="selecionado">
+        <option v-for="personagem in personagens" :value="personagem.codigo"
+        >
+            {{personagem.nome}}
+        </option>
+    </select>
+
+    <p>Escolhido: {{selecionado}} </p>
+</div>
+
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+           personagens: [
+               {codigo: 1, nome: "Home Lander"},
+               {codigo: 2, nome: "Trem Bala"},
+               {codigo: 3, nome: "Tempestade"}
+           ],
+           selecionado: 3
+        }
     })
 </script>
 ```
