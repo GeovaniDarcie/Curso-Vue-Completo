@@ -2429,7 +2429,7 @@ do campo "e-mail" é só usar **v-model.lazy**, ou seja, o v-model vai ficar com
 
 
 <a id="selectmodel"></a>
-##  Manipulando Combobox com <select> e <option>
+##  Manipulando Combobox com select e option
 
 ```html
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
