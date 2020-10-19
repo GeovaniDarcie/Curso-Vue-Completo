@@ -89,6 +89,7 @@ Esse manual foi feito por mim com base no curso da Udemy:
 * [Usando Checkboxes e Salvando os Dados em um Array](#checkboxmodel)
 * [Usando radio](#radiomodel)
 * [Manipulando Combobox com select e option](#selectmodel)
+* [Previnindo comportamento padrão do botão (prevent)](#prevent)
 
 
 # Capítulo 1: Usando VueJS para Interagir com a DOM 
@@ -2351,6 +2352,8 @@ do campo "e-mail" é só usar **v-model.lazy**, ou seja, o v-model vai ficar com
 
 > O v-model.number transforma o valor de string para number, isso é útil pois sempre no input, o valor retornado é uma string.
 
+**o v-model.number vai forçar o valor do campo a ser número**
+
 **[⬆ Voltar para o índice](#capitulo7)**
 
 
@@ -2460,6 +2463,13 @@ do campo "e-mail" é só usar **v-model.lazy**, ou seja, o v-model vai ficar com
     })
 </script>
 ```
+
+**[⬆ Voltar para o índice](#capitulo7)**
+
+<a id="prevent"></a>
+## Previnindo comportamento padrão do botão (prevent)
+
+> Para que o botão não faça o comportamento padrão de submit, é preciso usar **@click.prevent**, assim ele vai "prevenir do comportamento padrão.
 
 **[⬆ Voltar para o índice](#capitulo7)**
 
