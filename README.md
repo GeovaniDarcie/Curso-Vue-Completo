@@ -100,7 +100,12 @@ Esse manual foi feito por mim com base no curso da Udemy:
 * [Diretivas personalizadas com modificadores](#diretivamodificador)
 * [Anotomia de uma diretiva](#diretivaanatomia)
 * [Registrar diretivas localmente](#diretivalocal)
+* [Usando Múltiplos Modificadores](#variosmodificadores)
+* [Passando Valores mais Complexos para as Diretivas](#diretivascomplexo)
 
+<a id="capitulo9"></a>
+### Capítulo 9: Melhorando sua App com Filtros e Mixins
+* [Criando um filtro local](#filtrolocal)
 
 # Capítulo 1: Usando VueJS para Interagir com a DOM 
 <a id="hello"></a>
@@ -2704,6 +2709,35 @@ Vue.directive('destaque', {
     <p v-destaque-local.atrasar.alternar="{cor1: 'green', cor2: 'red', atraso: 2000, intervalo: 200}">Usando diretiva personalizada</p>
 ```
 > Para ter acesso ao valor, basta usar o binding.value.(nomeDoAtributo). Ex: binding.value.cor1 que seria igual a green.
+
+**[⬆ Voltar para o índice](#capitulo8)**
+
+
+# Capítulo 9: Melhorando sua App com Filtros e Mixins
+
+<a id="filtrolocal"></a>
+## Criando um Filtro Local
+
+> Filtro funciona como se fosse uma máscara para os inputs, então para criar um filtro local na minha aplicação posso passar como propriedade:
+
+```javascript
+    export default {
+	filters:{
+		cpf(valor){
+			const arr = valor.split('');
+			arr.splice(3, 0, '.');
+			arr.splice(7, 0, '.');
+			arr.splice(11, 0, '-');
+			return arr.join('');
+		}
+	},
+     }	
+```
+> E para aplicar esse filtro no seu dado, basta criar o dado normal na propriedade data, aqui vou criar chamado cpf também, e para aplicar o filtro basta usar o pipe:
+
+```html
+    <p>{{ cpf | rola}}</p>
+```
 
 **[⬆ Voltar para o índice](#capitulo8)**
 
