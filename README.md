@@ -2364,9 +2364,10 @@ do campo "e-mail" é só usar **v-model.lazy**, ou seja, o v-model vai ficar com
 > Para que os espaços em branco sejam preservados precismos usar o style: white-space: pre; -> "Espaços em branco **pre**servados
 
 ```javascript
-<label nome="E-mail">
-    <input type="text" v-model.lazy="usuario.email">
-</label>
+<span>Mensagem com múltiplas linhas:</span>
+<p style="white-space: pre;">{{ message }}</p>
+<br>
+<textarea v-model="message" placeholder="Escreva bastante"></textarea>
 ```
 
 **[⬆ Voltar para o índice](#capitulo7)**
