@@ -2651,3 +2651,61 @@ Vue.directive('destaque', {
 **[⬆ Voltar para o índice](#capitulo8)**
 
 
+<a id="variosmodificadores"></a>
+## Usando Múltiplos Modificadores
+
+
+```javascript
+	export default {
+	directives:{
+	   'destaque-local':{
+			bind(el, binding){
+				const aplicarCor = cor => {
+					if(binding.arg === 'fundo'){
+						el.style.backgroundColor = cor;
+					} else {
+						el.style.color = cor;
+					}
+				}
+
+				let atraso = 0;
+				if(binding.modifiers['atrasar']) atraso = 2000
+
+				const cor1 = binding.value;
+				const cor2 = 'purple';
+				let corAtual = cor1;
+
+				setTimeout(() =>{
+					if(binding.modifiers['alternar']){
+						setInterval(()=>{
+							corAtual = corAtual === cor1 ? cor2 : cor1;
+							aplicarCor(corAtual);
+						}, 1000)
+					}
+					aplicarCor(binding.value)
+				}, atraso)
+			}
+		}
+	}
+```
+
+> Chamando a diretiva:
+
+<p v-destaque-local.atrasar.alternar="'lightblue'">Usando diretiva personalizada</p>
+
+**[⬆ Voltar para o índice](#capitulo8)**
+
+
+<a id="diretivascomplexo"></a>
+## Passando Valores mais Complexos para as Diretivas
+
+> Consigo passar os valores como objeto
+```javascript
+    <p v-destaque-local.atrasar.alternar="{cor1: 'green', cor2: 'red', atraso: 2000, intervalo: 200}">Usando diretiva personalizada</p>
+```
+> Para ter acesso ao valor, basta usar o binding.value.(nomeDoAtributo). Ex: binding.value.cor1 que seria igual a green.
+
+**[⬆ Voltar para o índice](#capitulo8)**
+
+
+
