@@ -2507,7 +2507,7 @@ do campo "e-mail" é só usar **v-model.lazy**, ou seja, o v-model vai ficar com
 ```
 **[⬆ Voltar para o índice](#capitulo8)**
 
-<a id="diretivasimples"></a>
+<a id="diretivavalor"></a>
 ## Passando valor para a diretiva personalizada
 
 > Com o parâmetro **binding** consigo passar valores para a minha diretiva, nesse caso, por ser uma cor, o valor precisa estar entre aspas simples dentro das aspas duplas
@@ -2548,4 +2548,96 @@ export default {
 }
 ```
 **[⬆ Voltar para o índice](#capitulo8)**
+
+<a id="diretivaargumento"></a>
+## Passando Argumento para diretiva personalizada
+
+> O argumento da diretiva vem nos dois pontos :, igual quando temos v-bind:value, o argumento é value, ou v-on:click, o argumento é o click. Então podemos
+pegar o argumento com binding.arg ( no singular, podemos ter apenas um único argumento) e verificar se ele existe ou não: 
+
+```javascript
+	Vue.directive('destaque', {
+	bind(el, binding){
+		if(binding.arg === 'fundo'){
+			el.style.backgroundColor = binding.value;
+		} else {
+			el.style.color = binding.value;
+		}
+	}
+})
+```
+> Se o argumento existir, ele vai aplicar o fundo, se não vai aplicar apenas a cor.
+> Para usar a diretiva criada com argumento:
+
+```html
+  <p v-destaque="'lightblue'">Usando minha diretiva</p>
+```
+**[⬆ Voltar para o índice](#capitulo8)**
+
+<a id="diretivamodificador"></a>
+## Diretivas personalizadas com modificadores
+
+> Posso ter vários modificadores, eu vejo se eles estão sendo passados com **binding.modifiers['']**
+```javascript
+Vue.directive('destaque', {
+	bind(el, binding){
+		let atraso = 0;
+
+		if(binding.modifiers['atrasar']) atraso = 2000;
+
+		setTimeout(() => {
+			if(binding.arg === 'fundo'){
+				el.style.backgroundColor = binding.value;
+			} else {
+				el.style.color = binding.value;
+			}
+		}, atraso);
+		
+	}
+})
+```
+
+> Para usar a diretiva criada com modificador:
+
+```html
+  <p v-destaque:fundo.atrasar="'lightblue'">Usando minha diretiva</p>
+```
+**[⬆ Voltar para o índice](#capitulo8)**
+
+
+<a id="diretivaanatomia"></a>
+## Anotomia de uma diretiva
+
+> nome da diretiva:argumento.modificadores
+
+> v-diretiva:argumento.mod1.mod2.mod3....
+
+**[⬆ Voltar para o índice](#capitulo8)**
+
+<a id="diretivalocal"></a>
+## Registrar diretivas localmente
+
+
+```javascript
+	export default {
+	directives:{
+		'destaque-local':{
+			bind(el, binding){
+				let atraso = 0;
+				if(binding.modifiers['atrasar']) atraso = 2000
+
+				setTimeout(() =>{
+					if(binding.arg === 'fundo'){
+						el.style.backgroundColor = binding.value;
+					} else {
+						el.style.color = binding.value;
+					}
+				}, atraso)
+			}
+		}
+	}
+```
+
+**[⬆ Voltar para o índice](#capitulo8)**
+
 
