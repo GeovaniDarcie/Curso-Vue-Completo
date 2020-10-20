@@ -91,6 +91,16 @@ Esse manual foi feito por mim com base no curso da Udemy:
 * [Manipulando Combobox com select e option](#selectmodel)
 * [Previnindo comportamento padrão do botão (prevent)](#prevent)
 
+<a id="capitulo8"></a>
+### Capítulo 8: Usando e criando diretivas Personalizadas
+* [Algumas diretivas](#checkboxmodel)
+* [Criando diretiva simples](#diretivasimples)
+* [Passando valor para a diretiva personalizada](#diretivavalor)
+* [Passando Argumento para diretiva personalizada](#diretivaargumento)
+* [Diretivas personalizadas com modificadores](#diretivamodificador)
+* [Anotomia de uma diretiva](#diretivaanatomia)
+* [Registrar diretivas localmente](#diretivalocal)
+
 
 # Capítulo 1: Usando VueJS para Interagir com a DOM 
 <a id="hello"></a>
