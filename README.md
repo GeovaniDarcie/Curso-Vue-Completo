@@ -2736,8 +2736,9 @@ Vue.directive('destaque', {
 > E para aplicar esse filtro no seu dado, basta criar o dado normal na propriedade data, aqui vou criar chamado cpf também, e para aplicar o filtro basta usar o pipe:
 
 ```html
-    <p>{{ cpf | rola}}</p>
+    <p>{{ cpf | cpf}}</p>
 ```
+> Não tem problema usar o mesmo nome, poderia usar outro, mas usar o mesmo o Vue entende que o primeiro é o dado e o segundo é o filtro.
 
 **[⬆ Voltar para o índice](#capitulo8)**
 
