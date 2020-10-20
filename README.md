@@ -2470,7 +2470,82 @@ do campo "e-mail" é só usar **v-model.lazy**, ou seja, o v-model vai ficar com
 <a id="prevent"></a>
 ## Previnindo comportamento padrão do botão (prevent)
 
-> Para que o botão não faça o comportamento padrão de submit, é preciso usar **@click.prevent**, assim ele vai "prevenir do comportamento padrão.
+> Para que o botão não faça o comportamento padrão de submit, é preciso usar **@click.prevent**, assim ele vai se "prevenir" do comportamento padrão.
 
 **[⬆ Voltar para o índice](#capitulo7)**
+
+
+# Capítulo 8: Usando e criando diretivas
+
+<a id="diretivas"></a>
+## Algumas diretivas
+	
+```html
+	<p v-text="'Usando diretiva v-text'"></p>
+	<p v-html="'Usando diretiva <strong>v-html</strong>'"></p>
+```
+
+**[⬆ Voltar para o índice](#capitulo8)**
+
+<a id="diretivasimples"></a>
+## Criando diretiva simples
+
+> o método bind é um método hook, chamado apenas uma vez quando a diretiva é interligada com o elemento. "el" é o elemento que a diretiva está vinculada,
+é usado para manipular a DOM diretamente
+```javascript
+	Vue.directive('destaque', {
+	bind(el){
+		el.style.backgroundColor = 'lightgreen';
+	}
+})
+```
+
+> Para usar a diretiva criada:
+
+```html
+   <p v-destaque>Usando minha diretiva</p>
+```
+**[⬆ Voltar para o índice](#capitulo8)**
+
+<a id="diretivasimples"></a>
+## Passando valor para a diretiva personalizada
+
+> Com o parâmetro **binding** consigo passar valores para a minha diretiva, nesse caso, por ser uma cor, o valor precisa estar entre aspas simples dentro das aspas duplas
+e é preciso atualizar a página também, o auto reload não funciona muito bem aqui.
+
+```javascript
+	Vue.directive('destaque', {
+	bind(el, binding){
+		el.style.backgroundColor = binding.value;
+	}
+})
+```
+Para usar a diretiva
+```html
+   <p v-destaque="'blue'">Usando minha diretiva</p>
+```
+
+**Outro exemplo**
+```javascript
+<p v-destaque="1 + 1">Usando minha diretiva</p>
+---------------------------------------------
+Vue.directive('destaque', {
+	bind(el, binding){
+		el.innerText = binding.value;
+	}
+})
+```
+**Outro exemplo: Posso passar como dado normal**
+```javascript
+<p v-destaque="cor">Usando minha diretiva</p></div>
+
+export default {
+    data(){
+	return {
+	   cor: 'red'
+	}
+   }
+}
+```
+**[⬆ Voltar para o índice](#capitulo8)**
 
