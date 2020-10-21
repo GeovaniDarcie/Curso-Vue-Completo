@@ -2742,5 +2742,77 @@ Vue.directive('destaque', {
 
 **[⬆ Voltar para o índice](#capitulo8)**
 
+<a id="filtroglobal"></a>
+## Filtro Global e Como Encadear Múltiplos Filtros
+
+
+```javascript
+   Vue.filter('inverter', (valor)=>{
+	return valor.split('').reverse().join('');
+});
+```
+> Posso aplicar diversos filtro encadeados que serão aplicados no valor:
+
+```javascript
+  <p>{{ cpf | cpf | inverter }}</p>
+```
+
+> Posso também passar o valor diretamente:
+
+```javascript
+  <p>{{ '728172817' | cpf | inverter }}</p>
+```
+
+**[⬆ Voltar para o índice](#capitulo8)**
+
+
+
+<a id="filtrobind"></a>
+## Filtro com v-bind
+
+> Consigo aplicar o filtro com v-bind também: 
+```javascript
+   	<input type="text" :value="cpf | cpf | inverter">
+});
+```
+> Filtro não suporta o v-model, filtros não são muito otimizados, mas é bom para projetos simples, para ter mais otimização é melhor usar as
+propriedades computas.
+
+**[⬆ Voltar para o índice](#capitulo8)**
+
+
+<a id="mixins"></a>
+## Usando mixins
+
+> Com mixins eu consigo unir, "misturar" os dados do mixins com os dados de qualquer componente que eu queira usar, então por exemplo, tenho esse mixin:
+```javascript
+ <script>
+export default {
+       data(){
+        return{
+            fruta: '',
+            frutas: ['banana', 'maça', 'laranja']
+        }
+    },
+    methods:{
+        add(){
+            this.frutas.push(this.fruta)
+            this.fruta = ''
+        }
+    }
+}
+</script> 
+});
+```
+> Agora consigo chamar esse mixins em qualquer lugar, que os dados do componente ficaram unidos com os dados do mixin, e os dados serão diferentes para componente, para
+declarar é só usar essa declaração em qualquer componente:
+
+```javascript
+export default {
+    mixins: [FrutasMixins]
+}
+```
+
+**[⬆ Voltar para o índice](#capitulo8)**
 
 
