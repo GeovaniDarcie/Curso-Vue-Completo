@@ -106,6 +106,9 @@ Esse manual foi feito por mim com base no curso da Udemy:
 <a id="capitulo9"></a>
 ### Capítulo 9: Melhorando sua App com Filtros e Mixins
 * [Criando um filtro local](#filtrolocal)
+* [Filtro Global e Como Encadear Múltiplos Filtros](#filtroglobal)
+* [Filtro com v-bind](#filtrobind)
+* [Usando mixins](#mixins)
 
 # Capítulo 1: Usando VueJS para Interagir com a DOM 
 <a id="hello"></a>
