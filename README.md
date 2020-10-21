@@ -141,7 +141,7 @@ Esse manual foi feito por mim com base no curso da Udemy:
 <a id="funcao"></a>
 ## Usando Função :wrench:
 
-> Um atributo **methods** adicionado ao Vue para adicionar minhas funções (ou métodos), repare que em **data** eu abro um objeto, a mesma coisa em **methods**
+> Uma propriedade **methods** na instância do Vue serve para adicionar minhas funções (ou métodos), repare que em **data** eu abro um objeto, a mesma coisa em **methods**
 
 ```html
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -507,7 +507,7 @@ Esse manual foi feito por mim com base no curso da Udemy:
 <a id="model"></a>
 ## Two-Way-Binding (v-model) :arrows_clockwise:
 
-> Por enquanto com **v-bind*** os dados da minha instância Vue modificam apenas o template.
+> Por enquanto com **v-bind** os dados da minha instância Vue modificam apenas o template.
 
 > Já os eventos ouvem no template e modificam apenas os dados da instância Vue que por sua vez modificam o template.
 
@@ -537,11 +537,13 @@ Esse manual foi feito por mim com base no curso da Udemy:
 <a id="computed"></a>
 ## Propriedades computadas :computer:
 
-> Quando existe alguma alteração na irteface os componentes são rendererizados novamente, então os métodos são invocados mesmo sem ter ligação com as propriedades alteradas. Existe uma propriedade no vue **computed*** que o método só vai ser invocado quando a propriedade que tem relação com ele é alterada.
+> Quando existe alguma alteração na irteface os componentes são rendererizados novamente, então os métodos são invocados mesmo sem ter ligação com as propriedades alteradas. Existe uma propriedade no vue chamada **computed** que o método só vai ser invocado quando a propriedade que tem relação com ele é alterada.
 
 > Propriedades computed são chamadas sem os pareteses **()**
 
 > Repare que sem o **computed**, o método resultado() era chamado quando clicado em aumentar2, mesmo sem aumentar2 ter relação nenhuma com o método resultado, com o **computed** uma propriedade computada será apenas invocada quando uma propriedade que está relacionada a ela é atualizada!
+
+> O computed é usado quando quero juntar dos dados em um só.
 
 ```html
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -631,7 +633,7 @@ Esse manual foi feito por mim com base no curso da Udemy:
 <a id="reduzida"></a>
 ## Sintaxe reduzida 
 
-> eventos **v-on** podem ser substituídos por **@** e o **v-bind** por **:**
+> eventos **v-on** podem ser substituídos por **@** e o **v-bind** por **:**(dois pontos)
 
 ```html
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -663,7 +665,7 @@ Esse manual foi feito por mim com base no curso da Udemy:
 <a id="estilo"></a>
 ## Estilo dinâmico e classes CSS :tshirt:
 
-> Aplicar estilo do CSS diretamente no template, é usado **:class="{ (nome da classe): (valor booleano)}"** ex: **:class="{c1: true}**
+>Consigo Aplicar estilo CSS diretamente no template usando **:class="{ (nome da classe): (valor booleano)}"** ex: **:class="{c1: true}**
 
 ```html
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -714,7 +716,7 @@ Esse manual foi feito por mim com base no curso da Udemy:
 <a id="estilo2"></a>
 ## Estilo dinâmico e classes CSS 2 :art:
 
-> Uma outra forma de aplicar as classes é usando a propriedade computed, consigo assim aplicar várias classes de uma forma mais enxuta.
+> Uma outra forma de aplicar as classes css é usando a propriedade computed, consigo assim aplicar várias classes de uma forma mais enxuta.
 
 ```html
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -844,7 +846,7 @@ Esse manual foi feito por mim com base no curso da Udemy:
 <a id="semclasse"></a>
 ## Estilo dinâmico sem classe :tophat:
 
-> Lembrando que para aplicar o nome de uma classe no template que tenha **-** precisa usar aspas. ex: 'background-color'
+> Lembrando que para aplicar o nome de uma classe no template que tenha **-** (hífe) preciso usar aspas. ex: 'background-color'
 
 
 ```html
@@ -1000,6 +1002,7 @@ Esse manual foi feito por mim com base no curso da Udemy:
 
 > Com a diretiva **v-show**, o elemento não desaparece da DOM, apenas é usado um estilo para ele ficar display:none.
 > **v-show** não tem "else", basta aplicar uma negação a ele.
+> Como é aplicado apenas um estilo, o v-show é mais performático do que o v-if, pois o v-if altera a DOM.
 
 ```html
 <meta charset="UTF-8">
@@ -2808,7 +2811,6 @@ export default {
 declarar é só usar essa declaração em qualquer componente:
 
 ```javascript
-import FrutasMixins from './FrutasMixins.vue'
 export default {
     mixins: [FrutasMixins]
 }
