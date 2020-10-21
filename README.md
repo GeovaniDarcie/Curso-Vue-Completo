@@ -2808,6 +2808,7 @@ export default {
 declarar é só usar essa declaração em qualquer componente:
 
 ```javascript
+import FrutasMixins from './FrutasMixins.vue'
 export default {
     mixins: [FrutasMixins]
 }
