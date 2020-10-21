@@ -93,7 +93,7 @@ Esse manual foi feito por mim com base no curso da Udemy:
 
 <a id="capitulo8"></a>
 ### Capítulo 8: Usando e criando diretivas Personalizadas
-* [Algumas diretivas](#checkboxmodel)
+* [Algumas diretivas](#diretivas)
 * [Criando diretiva simples](#diretivasimples)
 * [Passando valor para a diretiva personalizada](#diretivavalor)
 * [Passando Argumento para diretiva personalizada](#diretivaargumento)
