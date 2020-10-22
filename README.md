@@ -2822,3 +2822,88 @@ export default {
 **[⬆ Voltar para o índice](#capitulo8)**
 
 
+# Capítulo 10: Adicionando Animações e Transições
+
+<a id="bootstrapvue"></a>
+## Bootstrap com Vue
+
+> Para usar boostrap no vue, posso adicionar o plugin dessa forma:
+```javascript
+  vue add bootstrap-vue
+```
+> Para usar basta colocar b- (nome do elemento): 
+> obs: variant="primary" para cor azul
+
+```html
+  <b-button variant="primary" />
+  <b-alert variant="info"  show></b-alert>
+```
+
+**[⬆ Voltar para o índice](#capitulo8)**
+
+<a id="distbootstrap"></a>
+## Dist Bootstrap
+
+> Posso criar uma basta dentro de src chamada plugins e lá colocar um arquivo js "bootstrap-vue.js":
+```javascript
+import Vue from 'vue'
+
+import BootstrapVue from 'bootstrap-vue'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
+
+Vue.use(BootstrapVue)
+```
+
+**[⬆ Voltar para o índice](#capitulo8)**
+
+
+<a id="distbootstrap"></a>
+## Dist Bootstrap
+
+> Posso criar uma pasta dentro de src chamada plugins e lá colocar um arquivo js "bootstrap-vue.js":
+```javascript
+import Vue from 'vue'
+
+import BootstrapVue from 'bootstrap-vue'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
+
+Vue.use(BootstrapVue)
+```
+
+**[⬆ Voltar para o índice](#capitulo8)**
+
+
+<a id="transicaovue"></a>
+## Criando Transição "Fade" com Propriedade CSS transition
+
+> Usando o v-if, o componente aparece e desaparece de forma abrupta, podemos fazer um efeito de transição para que desapareça e apareça lentamente,
+usando a tag transition em volta do elemento que irá desaparecer:
+```javascript
+<transition name="fade">
+       <b-alert variant="info" show v-if="exibir">{{msg}}</b-alert>
+</transition>
+```
+> O nome fade é opcional, posso usar qualquer nome.
+> As classes que dão efeito de transição são as: (Aonde o asterisco significa que posso usar qualquer nome, nesse exemplo estou usando o nome "fade")
+   	1. *-enter: enter de "entrar", o elemento vai "entrar" na tela, então no início ele não irá aparecer, ou seja: opacity: 0.
+	2. *-enter-active: É o efeito que irá acontecer no elmemento. Ex: transition: opacity 2s;
+	3. *-enter-to: É o efeito final, quando o elemento aparece: opacity: 1;
+	4. *-leave : leave é sair, ou seja o elemento vai sair da tela, aqui o elemento começa com opacity: 1;
+	5. *-leave-active: transição parece ele sair.
+	6. *-leave-to: elemento sai de vez com opacity: 0;
+
+> Como a transição já leva o opacity a 1, posso simplemente oculta-lo, e como alguns padrões se repetem, posso escrever dessa forma:
+```css
+	.fade-enter, .fade-leave-to{
+		opacity: 0;
+	}
+
+	.fade-enter-active, .fade-leave-active{
+		transition: opacity 2s;
+	}
+```
+**[⬆ Voltar para o índice](#capitulo8)**
+
+
