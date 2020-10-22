@@ -2776,7 +2776,7 @@ Vue.directive('destaque', {
   <p>{{ '728172817' | cpf | inverter }}</p>
 ```
 
-**[⬆ Voltar para o índice](#capitulo8)**
+**[⬆ Voltar para o índice](#capitulo9)**
 
 
 
@@ -2791,7 +2791,7 @@ Vue.directive('destaque', {
 > Filtro não suporta o v-model, filtros não são muito otimizados, mas é bom para projetos simples, para ter mais otimização é melhor usar as
 propriedades computas.
 
-**[⬆ Voltar para o índice](#capitulo8)**
+**[⬆ Voltar para o índice](#capitulo9)**
 
 
 <a id="mixins"></a>
@@ -2826,7 +2826,7 @@ export default {
 }
 ```
 
-**[⬆ Voltar para o índice](#capitulo8)**
+**[⬆ Voltar para o índice](#capitulo9)**
 
 
 # Capítulo 10: Adicionando Animações e Transições
@@ -2846,7 +2846,7 @@ export default {
   <b-alert variant="info"  show></b-alert>
 ```
 
-**[⬆ Voltar para o índice](#capitulo8)**
+**[⬆ Voltar para o índice](#capitulo10)**
 
 <a id="distbootstrap"></a>
 ## Dist Bootstrap
@@ -2862,7 +2862,7 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 Vue.use(BootstrapVue)
 ```
 
-**[⬆ Voltar para o índice](#capitulo8)**
+**[⬆ Voltar para o índice](#capitulo10)**
 
 
 <a id="distbootstrap"></a>
@@ -2879,7 +2879,7 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 Vue.use(BootstrapVue)
 ```
 
-**[⬆ Voltar para o índice](#capitulo8)**
+**[⬆ Voltar para o índice](#capitulo10)**
 
 
 <a id="transicaovue"></a>
@@ -2911,7 +2911,7 @@ usando a tag transition em volta do elemento que irá desaparecer:
 		transition: opacity 2s;
 	}
 ```
-**[⬆ Voltar para o índice](#capitulo8)**
+**[⬆ Voltar para o índice](#capitulo10)**
 
 <a id="animacao"></a>
 ## Criando Transição "Slide" com Propriedade CSS animation
@@ -2952,4 +2952,5 @@ usando a tag transition em volta do elemento que irá desaparecer:
  </transition>
 ```
 
+**[⬆ Voltar para o índice](#capitulo10)**
 
