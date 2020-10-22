@@ -2746,7 +2746,7 @@ Vue.directive('destaque', {
 ```
 > Não tem problema usar o mesmo nome, poderia usar outro, mas usar o mesmo o Vue entende que o primeiro é o dado e o segundo é o filtro.
 
-**[⬆ Voltar para o índice](#capitulo8)**
+**[⬆ Voltar para o índice](#capitulo9)**
 
 <a id="filtroglobal"></a>
 ## Filtro Global e Como Encadear Múltiplos Filtros
@@ -2769,7 +2769,7 @@ Vue.directive('destaque', {
   <p>{{ '728172817' | cpf | inverter }}</p>
 ```
 
-**[⬆ Voltar para o índice](#capitulo8)**
+**[⬆ Voltar para o índice](#capitulo9)**
 
 
 
@@ -2784,7 +2784,7 @@ Vue.directive('destaque', {
 > Filtro não suporta o v-model, filtros não são muito otimizados, mas é bom para projetos simples, para ter mais otimização é melhor usar as
 propriedades computas.
 
-**[⬆ Voltar para o índice](#capitulo8)**
+**[⬆ Voltar para o índice](#capitulo9)**
 
 
 <a id="mixins"></a>
@@ -2819,7 +2819,7 @@ export default {
 }
 ```
 
-**[⬆ Voltar para o índice](#capitulo8)**
+**[⬆ Voltar para o índice](#capitulo9)**
 
 
 # Capítulo 10: Adicionando Animações e Transições
@@ -2839,7 +2839,7 @@ export default {
   <b-alert variant="info"  show></b-alert>
 ```
 
-**[⬆ Voltar para o índice](#capitulo8)**
+**[⬆ Voltar para o índice](#capitulo10)**
 
 <a id="distbootstrap"></a>
 ## Dist Bootstrap
@@ -2855,25 +2855,7 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 Vue.use(BootstrapVue)
 ```
 
-**[⬆ Voltar para o índice](#capitulo8)**
-
-
-<a id="distbootstrap"></a>
-## Dist Bootstrap
-
-> Posso criar uma pasta dentro de src chamada plugins e lá colocar um arquivo js "bootstrap-vue.js":
-```javascript
-import Vue from 'vue'
-
-import BootstrapVue from 'bootstrap-vue'
-import 'bootstrap/dist/css/bootstrap.min.css'
-import 'bootstrap-vue/dist/bootstrap-vue.css'
-
-Vue.use(BootstrapVue)
-```
-
-**[⬆ Voltar para o índice](#capitulo8)**
-
+**[⬆ Voltar para o índice](#capitulo10)**
 
 <a id="transicaovue"></a>
 ## Criando Transição "Fade" com Propriedade CSS transition
@@ -2904,7 +2886,7 @@ usando a tag transition em volta do elemento que irá desaparecer:
 		transition: opacity 2s;
 	}
 ```
-**[⬆ Voltar para o índice](#capitulo8)**
+**[⬆ Voltar para o índice](#capitulo10)**
 
 <a id="animacao"></a>
 ## Criando Transição "Slide" com Propriedade CSS animation
@@ -2944,5 +2926,7 @@ usando a tag transition em volta do elemento que irá desaparecer:
        <b-alert variant="info" 	show v-if="exibir">{{msg}}</b-alert>
  </transition>
 ```
+
+**[⬆ Voltar para o índice](#capitulo10)**
 
 
