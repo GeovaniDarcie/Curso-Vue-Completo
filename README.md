@@ -3031,3 +3031,36 @@ Para usar basta pegar o nome do lado direito e colocar animate na frente:
 **[⬆ Voltar para o índice](#capitulo10)**
 
 
+<a id="nomesdinamicosatributos"></a>
+## Usando Nomes e Atributos Dinâmicos
+    ```html
+	<hr>
+	<b-select v-model="tipoAnimacao">
+	    <option value="slide">Slide</option>
+	    <option value="fade">Fade</option>
+	 </b-select>
+	<transition :name="tipoAnimacao">
+       	     <b-alert variant="info" show v-if="exibir">{{msg}}</b-alert>
+ 	</transition>
+     ```	
+**[⬆ Voltar para o índice](#capitulo10)**
+
+<a id="transicionar"></a>
+## Transicionar entre Múltiplos Elementos
+
+> Para eu conseguir trocar de elementos e mesmo assim o efeito continuar, preciso usar a propriedade **key**.
+> E para que um elemento tenha seu efeito e só depois entre outro elemento, tenho que usar **mode= out-in**.
+    ```html
+	<b-select v-model="tipoAnimacao">
+		<option value="slide">Slide</option>
+		<option value="fade">Fade</option>
+	</b-select>
+	<transition :name="tipoAnimacao" mode="out-in">
+	<b-alert variant="info" show v-if="exibir" key="info">{{msg}}</b-alert>
+	<b-alert variant="warning" show v-else key="warn">{{msg}}</b-alert>
+	</transition>
+     ```	
+**[⬆ Voltar para o índice](#capitulo10)**
+
+
+
