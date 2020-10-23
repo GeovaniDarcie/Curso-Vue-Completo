@@ -2917,14 +2917,6 @@ usando a tag transition em volta do elemento que irá desaparecer:
 ## Criando Transição "Slide" com Propriedade CSS animation
 
 ```css
-.fade-enter, .fade-leave-to{
-	opacity: 0;
-}
-
-.fade-enter-active, .fade-leave-active{
-	transition: opacity 2s;
-}
-
 @keyframes slide-in {
 	from { transform: translateY(40px); }
 	to { transform: translateY(0); }
@@ -2953,4 +2945,89 @@ usando a tag transition em volta do elemento que irá desaparecer:
 ```
 
 **[⬆ Voltar para o índice](#capitulo10)**
+
+
+<a id="animacaoetransicao"></a>
+## Misturando as Propriedades transition e animation
+
+```css
+	@keyframes slide-in {
+		from { transform: translateY(40px); }
+		to { transform: translateY(0); }
+	}
+
+	@keyframes slide-out {
+		from { transform: translateY(0); }
+		to { transform: translateY(40px); }
+	}
+
+	.slide-enter-active {
+		animation: slide-in 2s ease;
+		transition: opacity 2s;
+	}
+
+	.slide-leave-active {
+		animation: slide-out 2s ease;
+		transition: opacity 2s;
+	}
+
+	.slide-enter, .slide-leave-to{
+		opacity: 0;
+	}
+
+```
+**[⬆ Voltar para o índice](#capitulo10)**
+
+
+<a id="tempoanimacao"></a>
+## Tempo de animação diferente de tempo de transição
+
+> Image que a transição tenha mais tempo do que a animação:
+```css
+.slide-leave-active {
+		animation: slide-out 2s ease;
+		transition: opacity 6s;
+	}
+```
+
+> Isso gera um efeito estranho, para contornar isso, existe o atributo **type** que serve para dizer qual efeito vai ter prioridade:
+
+```javascript
+ <transition name="slide" type="animation">
+```
+
+> Agora não importa o tempo de transição, como defini type="animation", após ela terminar, irá desaparecer o efeito.
+**[⬆ Voltar para o índice](#capitulo10)**
+
+
+<a id="carregamentopage"></a>
+## Configurando Animação no Carregamento do Componente
+
+> Para que aconteça o efeito ao carregar a página, basta usar a propriedade **appear**:
+ 	 <transition name="slide" type="animation" appear>
+	
+**[⬆ Voltar para o índice](#capitulo10)**
+
+
+<a id="animatecss"></a>
+## Animações com Animate.css
+
+> O animate tem várias animações legais para serem utilizadas: [animate](https://animate.style/)
+
+Para usar basta pegar o nome do lado direito e colocar animate na frente:
+
+```html
+<transition 
+     enter-active-class="animated swing"
+     leave-active-class="animated shake">
+      <b-alert variant="info" show v-if="exibir">{{msg}}</b-alert>
+ </transition>
+```
+ > E no arquivo index.html da pasta public usar o link: 
+
+```html
+   <link href="https://cdn.jsdelivr.net/npm/animate.css@3.5.1" rel="stylesheet" type="text/css" />
+```
+**[⬆ Voltar para o índice](#capitulo10)**
+
 
