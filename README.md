@@ -3062,5 +3062,105 @@ Para usar basta pegar o nome do lado direito e colocar animate na frente:
      ```	
 **[⬆ Voltar para o índice](#capitulo10)**
 
+<a id="transitiongroup"></a>
+## Usando transition-group (Para animar vários elementos)
+
+    ```html
+	<template>
+	<div id="app" class="container-fluid">
+		<h1>Animações</h1>
+	 
+		 <b-button @click="adicionarAluno" class="mb-4">Adicionar</b-button>
+		 <transition-group name="slide">
+			<b-list-group v-for="(aluno,i) in alunos" :key="aluno">
+				<b-list-group-item @click="removerAluno(i)">
+					{{aluno}}
+				</b-list-group-item>
+			</b-list-group>
+		 </transition-group>
+	</div>
+	</template>
+
+	<script>
+
+	export default {
+    	data(){
+		return{
+		    alunos: ['Paulo', 'João', 'Roberto', 'Pedro']
+		}
+	},
+	methods: {
+		adicionarAluno(){
+			let a = Math.random().toString(36).substring(2);
+			this.alunos.push(a)
+		},
+		removerAluno(indice){
+			this.alunos.splice(indice, 1);
+		}
+		}
+	}
+	</script>
+
+	<style>
+	#app {
+		font-family: 'Avenir', Helvetica, Arial, sans-serif;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		text-align: center;
+		color: #2c3e50;
+		margin-top: 60px;
+		font-size: 1.5rem;
+	}
+
+	.caixa{
+		height: 100px;
+		width: 300px;
+		margin: 30px auto;
+		background-color: lightgreen;
+	}
+
+	.fade-enter, .fade-leave-to{
+		opacity: 0;
+	}
+
+	.fade-enter-active, .fade-leave-active{
+		transition: opacity 2s;
+	}
+
+	@keyframes slide-in {
+		from { transform: translateY(40px); }
+		to { transform: translateY(0); }
+	}
+
+	@keyframes slide-out {
+		from { transform: translateY(0); }
+		to { transform: translateY(40px); }
+	}
+
+	.slide-enter-active {
+		position: absolute;
+		width: 100%;
+		animation: slide-out 2s ease;
+		animation: slide-in 2s ease;
+		transition: opacity 2s;
+	}
+
+	.slide-leave-active {
+		animation: slide-out 2s ease;
+		transition: opacity 2s;
+	}
+
+	.slide-enter, .slide-leave-to{
+		opacity: 0;
+	}
+
+	.slide-move{
+		transition: transform 1s;
+	}
+	</style>
+     ```	
+**[⬆ Voltar para o índice](#capitulo10)**
+
+
 
 
