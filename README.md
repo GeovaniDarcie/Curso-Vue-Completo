@@ -116,6 +116,14 @@ Esse manual foi feito por mim com base no curso da Udemy:
 * [Dist Bootstrap](#distbootstrap)
 * [Criando Transição "Fade" com Propriedade CSS transition](#transicaovue)
 * [Criando Transição "Slide" com Propriedade CSS animation](#animacao)
+* [Misturando as Propriedades transition e animation](#animacaoetransicao)
+* [Tempo de animação diferente de tempo de transição](#tempoanimacao)
+* [Configurando Animação no Carregamento do Componente](#carregamentopage)
+* [Animações com Animate.css](#animatecss)
+* [Usando Nomes e Atributos Dinâmicos](#nomesdinamicosatributos)
+* [Transicionar entre Múltiplos Elementos](#transicionar)
+* [Usando transition-group (Para animar vários elementos)](#transitiongroup)
+* [Usando transition-group (Para animar vários elementos)](#transitiongroup)
 
 # Capítulo 1: Usando VueJS para Interagir com a DOM 
 <a id="hello"></a>
