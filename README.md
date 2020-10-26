@@ -3170,5 +3170,40 @@ Para usar basta pegar o nome do lado direito e colocar animate na frente:
 **[⬆ Voltar para o índice](#capitulo10)**
 
 
+# Capítulo 11: Conectando com Servidor via HTTP
+
+<a id="axiosglobal"></a>
+##  Configuração Global do Axios
+    > Nesse capítulo estamos usando banco de dados do firebase.
+    > Para instalar o axios na sua aplicação juto com a pasta node modules, execute esse comando:
+    ```
+    npm i --save axios
+    ```
+   > Isso vai mostrar no arquivo package.json a versão do axios instalada.
+   
+   > Para executar o axios de forma global, dentro da plugins crie um arquivo **axios.js** e dentro coloque esse código:
+    ```javascript
+	  import Vue from 'vue';
+	  import axios from 'axios';
+
+	 axios.defaults.baseURL = 'URL do seu banco de dados do firebase';
+
+	Vue.use({
+	    install(Vue){
+		Vue.prototype.$http = axios
+	    }
+	})  
+    ```
+    
+    > Agora basta importar no arquivo main.js:
+      ```javascript
+	 import './plugins/axios' 
+    ``` 
+   
+**[⬆ Voltar para o índice](#capitulo11)**
+
+
+
+
 
 
