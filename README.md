@@ -3291,32 +3291,25 @@ export default {
 ```
 
 > Agora basta registrar esse componente e usar!
+
 **[⬆ Voltar para o índice](#capitulo12)**
 
 <a id="router-links"></a>
-## Navegando com Router Links
->O comportamento padrão do link é trazer uma página html inteira, com o router-link, ele faz uma requisição do tipo AJAX:
+## Reagindo a Mudanças em Parâmetros de Rotas
+>Para passar parâmetros na url basta usar /:(nome do parâmetro):
  ```html
-<template>
-  <nav class="menu">
-      <router-link to="/">Início</router-link>
-      <router-link to="/usuario">Usuário</router-link>
-  </nav>
-</template>
-
-<script>
-export default {
-
-}
-</script>
-
-<style>
-
-</style>
+  path: '/usuario/:id'
 ```
 
-> Agora basta registrar esse componente e usar!
+> Agora para pegar o valor do parâmetro passado:
+ ```html
+  this.$route.params.id
+```
+
+
 **[⬆ Voltar para o índice](#capitulo12)**
+
+
 
 
 
