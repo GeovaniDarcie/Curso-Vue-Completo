@@ -125,6 +125,9 @@ Esse manual foi feito por mim com base no curso da Udemy:
 * [Usando transition-group (Para animar vários elementos)](#transitiongroup)
 * [Usando transition-group (Para animar vários elementos)](#transitiongroup)
 
+<a id="capitulo11"></a>
+### Capítulo 11: Conectando com Servidor via HTTP
+
 # Capítulo 1: Usando VueJS para Interagir com a DOM 
 <a id="hello"></a>
 ## Hello World :raised_hand:
@@ -2872,24 +2875,6 @@ Vue.use(BootstrapVue)
 
 **[⬆ Voltar para o índice](#capitulo10)**
 
-
-<a id="distbootstrap"></a>
-## Dist Bootstrap
-
-> Posso criar uma pasta dentro de src chamada plugins e lá colocar um arquivo js "bootstrap-vue.js":
-```javascript
-import Vue from 'vue'
-
-import BootstrapVue from 'bootstrap-vue'
-import 'bootstrap/dist/css/bootstrap.min.css'
-import 'bootstrap-vue/dist/bootstrap-vue.css'
-
-Vue.use(BootstrapVue)
-```
-
-**[⬆ Voltar para o índice](#capitulo10)**
-
-
 <a id="transicaovue"></a>
 ## Criando Transição "Fade" com Propriedade CSS transition
 
@@ -3011,8 +2996,10 @@ usando a tag transition em volta do elemento que irá desaparecer:
 <a id="carregamentopage"></a>
 ## Configurando Animação no Carregamento do Componente
 
-> Para que aconteça o efeito ao carregar a página, basta usar a propriedade **appear**:
- 	 <transition name="slide" type="animation" appear>
+> Para que aconteça o efeito ao carregar a página, basta usar a propriedade appear:
+ 	 <transition appear>
+ 		 <!-- ... -->
+	</transition>
 	
 **[⬆ Voltar para o índice](#capitulo10)**
 
@@ -3041,16 +3028,15 @@ Para usar basta pegar o nome do lado direito e colocar animate na frente:
 
 <a id="nomesdinamicosatributos"></a>
 ## Usando Nomes e Atributos Dinâmicos
-    ```html
-	<hr>
+```html
 	<b-select v-model="tipoAnimacao">
 	    <option value="slide">Slide</option>
 	    <option value="fade">Fade</option>
 	 </b-select>
 	<transition :name="tipoAnimacao">
-       	     <b-alert variant="info" show v-if="exibir">{{msg}}</b-alert>
+          <b-alert variant="info" show v-if="exibir">{{msg}}</b-alert>
  	</transition>
-     ```	
+```
 **[⬆ Voltar para o índice](#capitulo10)**
 
 <a id="transicionar"></a>
@@ -3058,115 +3044,118 @@ Para usar basta pegar o nome do lado direito e colocar animate na frente:
 
 > Para eu conseguir trocar de elementos e mesmo assim o efeito continuar, preciso usar a propriedade **key**.
 > E para que um elemento tenha seu efeito e só depois entre outro elemento, tenho que usar **mode= out-in**.
-    ```html
-	<b-select v-model="tipoAnimacao">
-		<option value="slide">Slide</option>
-		<option value="fade">Fade</option>
-	</b-select>
-	<transition :name="tipoAnimacao" mode="out-in">
-	<b-alert variant="info" show v-if="exibir" key="info">{{msg}}</b-alert>
-	<b-alert variant="warning" show v-else key="warn">{{msg}}</b-alert>
-	</transition>
-     ```	
+    
+```html
+<b-select v-model="tipoAnimacao">
+    <option value="slide">Slide</option>
+    <option value="fade">Fade</option>
+</b-select>
+<transition :name="tipoAnimacao" mode="out-in">
+    <b-alert variant="info" show v-if="exibir" key="info">{{msg}}</b-alert>
+    <b-alert variant="warning" show v-else key="warn">{{msg}}</b-alert>
+</transition>
+```
+     	
 **[⬆ Voltar para o índice](#capitulo10)**
 
 <a id="transitiongroup"></a>
 ## Usando transition-group (Para animar vários elementos)
 
-    ```html
-	<template>
-	<div id="app" class="container-fluid">
-		<h1>Animações</h1>
-	 
-		 <b-button @click="adicionarAluno" class="mb-4">Adicionar</b-button>
-		 <transition-group name="slide">
-			<b-list-group v-for="(aluno,i) in alunos" :key="aluno">
-				<b-list-group-item @click="removerAluno(i)">
-					{{aluno}}
-				</b-list-group-item>
-			</b-list-group>
-		 </transition-group>
-	</div>
-	</template>
+```html
+<template>
+<div id="app" class="container-fluid">
+	<h1>Animações</h1>
+ 
+	 <b-button @click="adicionarAluno" class="mb-4">Adicionar</b-button>
+	 <transition-group name="slide">
+		<b-list-group v-for="(aluno,i) in alunos" :key="aluno">
+			<b-list-group-item @click="removerAluno(i)">
+				{{aluno}}
+			</b-list-group-item>
+		</b-list-group>
+	 </transition-group>
+</div>
+</template>
 
-	<script>
+<script>
 
-	export default {
-    	data(){
-		return{
-		    alunos: ['Paulo', 'João', 'Roberto', 'Pedro']
-		}
+export default {
+	data(){
+	return{
+	    alunos: ['Paulo', 'João', 'Roberto', 'Pedro']
+	}
+},
+methods: {
+	adicionarAluno(){
+		let a = Math.random().toString(36).substring(2);
+		this.alunos.push(a)
 	},
-	methods: {
-		adicionarAluno(){
-			let a = Math.random().toString(36).substring(2);
-			this.alunos.push(a)
-		},
-		removerAluno(indice){
-			this.alunos.splice(indice, 1);
-		}
-		}
+	removerAluno(indice){
+		this.alunos.splice(indice, 1);
 	}
-	</script>
+	}
+}
+</script>
 
-	<style>
-	#app {
-		font-family: 'Avenir', Helvetica, Arial, sans-serif;
-		-webkit-font-smoothing: antialiased;
-		-moz-osx-font-smoothing: grayscale;
-		text-align: center;
-		color: #2c3e50;
-		margin-top: 60px;
-		font-size: 1.5rem;
-	}
+<style>
+#app {
+	font-family: 'Avenir', Helvetica, Arial, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-align: center;
+	color: #2c3e50;
+	margin-top: 60px;
+	font-size: 1.5rem;
+}
 
-	.caixa{
-		height: 100px;
-		width: 300px;
-		margin: 30px auto;
-		background-color: lightgreen;
-	}
+.caixa{
+	height: 100px;
+	width: 300px;
+	margin: 30px auto;
+	background-color: lightgreen;
+}
 
-	.fade-enter, .fade-leave-to{
-		opacity: 0;
-	}
+.fade-enter, .fade-leave-to{
+	opacity: 0;
+}
 
-	.fade-enter-active, .fade-leave-active{
-		transition: opacity 2s;
-	}
+.fade-enter-active, .fade-leave-active{
+	transition: opacity 2s;
+}
 
-	@keyframes slide-in {
-		from { transform: translateY(40px); }
-		to { transform: translateY(0); }
-	}
+@keyframes slide-in {
+	from { transform: translateY(40px); }
+	to { transform: translateY(0); }
+}
 
-	@keyframes slide-out {
-		from { transform: translateY(0); }
-		to { transform: translateY(40px); }
-	}
+@keyframes slide-out {
+	from { transform: translateY(0); }
+	to { transform: translateY(40px); }
+}
 
-	.slide-enter-active {
-		position: absolute;
-		width: 100%;
-		animation: slide-out 2s ease;
-		animation: slide-in 2s ease;
-		transition: opacity 2s;
-	}
+.slide-enter-active {
+	position: absolute;
+	width: 100%;
+	animation: slide-out 2s ease;
+	animation: slide-in 2s ease;
+	transition: opacity 2s;
+}
 
-	.slide-leave-active {
-		animation: slide-out 2s ease;
-		transition: opacity 2s;
-	}
+.slide-leave-active {
+	animation: slide-out 2s ease;
+	transition: opacity 2s;
+}
 
-	.slide-enter, .slide-leave-to{
-		opacity: 0;
-	}
+.slide-enter, .slide-leave-to{
+	opacity: 0;
+}
 
-	.slide-move{
-		transition: transform 1s;
-	}
-	</style>
-     ```	
+.slide-move{
+	transition: transform 1s;
+}
+</style>
+```
+
 **[⬆ Voltar para o índice](#capitulo10)**
 
 
