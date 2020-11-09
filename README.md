@@ -3195,6 +3195,132 @@ Vue.use({
 **[⬆ Voltar para o índice](#capitulo11)**
 
 
+# Capítulo 12: Rotas em uma Aplicação VueJS
+
+<a id="vue-router"></a>
+## Instalação do vue-router
+`npm i --save vue-router@3.0.2 -E`
+
+>Flag -E é para instalar exatamente essa versão.
+**[⬆ Voltar para o índice](#capitulo12)**
+
+<a id="duasrotas"></a>
+## Criando duas rotas
+>Basta eu registrar as rotas num arquivo routes.js e importar qual componente irei usar em qual caminho:
+
+```html
+import Vue from 'vue'
+import Router from 'vue-router'
+import Inicio from './components/Inicio.vue'
+import Usuario from './components/usuario/Usuario.vue'
+
+Vue.use(Router)
+
+export default new Router({
+    routes: [{
+        path: '/',
+        component: Inicio
+    }, {
+        path: '/usuario',
+        component: Usuario
+    }]
+})
+```
+
+>Agora basta importar no arquivo main.js e colocar como propriedade do Vue:
+```html
+import './style.css'
+import Vue from 'vue'
+import App from './App.vue'
+import router from './router'
+
+Vue.config.productionTip = false
+
+new Vue({
+  router,
+  render: h => h(App),
+}).$mount('#app')
+```
+
+> Agora para mostrar esses componentes pasta colocar a tag <router-view />
+**[⬆ Voltar para o índice](#capitulo12)**
+
+<a id="hash"></a>
+## Entendendo os Modos de Rotas (Hash vs History)
+> O modo hash aparece um # na url, quando é feito a requisição, ela passa pelo index, o index direciona para o app (aonde está o vue), no caos da requesição com #:
+ http://localhost:8080/#/usuario
+> O servidor só recebe  http://localhost:8080/ basta ver isso na aba network. E assim ele é obrigado a passar pelo index, e o browser com # direciona para os componentes.
+> O modo history vai fazer a requisição na url diretamente no servidor, ficaria: (Na aba network é possível ver que a requisição é completa)
+   http://localhost:8080/usuario
+> Para mudar entre os dois modos, basta na minha instância router adicionar a propriedade **mode** e fazer a escolha, ou hash ou history:
+ ```html
+export default new Router({
+    mode: 'history',
+    routes: [{
+        path: '/',
+        component: Inicio
+    }, {
+        path: '/usuario',
+        component: Usuario
+    }]
+})
+```
+  
+**[⬆ Voltar para o índice](#capitulo12)**
+
+<a id="router-links"></a>
+## Navegando com Router Links
+>O comportamento padrão do link é trazer uma página html inteira, com o router-link, ele faz uma requisição do tipo AJAX:
+ ```html
+<template>
+  <nav class="menu">
+      <router-link to="/">Início</router-link>
+      <router-link to="/usuario">Usuário</router-link>
+  </nav>
+</template>
+
+<script>
+export default {
+
+}
+</script>
+
+<style>
+
+</style>
+```
+
+> Agora basta registrar esse componente e usar!
+**[⬆ Voltar para o índice](#capitulo12)**
+
+<a id="router-links"></a>
+## Navegando com Router Links
+>O comportamento padrão do link é trazer uma página html inteira, com o router-link, ele faz uma requisição do tipo AJAX:
+ ```html
+<template>
+  <nav class="menu">
+      <router-link to="/">Início</router-link>
+      <router-link to="/usuario">Usuário</router-link>
+  </nav>
+</template>
+
+<script>
+export default {
+
+}
+</script>
+
+<style>
+
+</style>
+```
+
+> Agora basta registrar esse componente e usar!
+**[⬆ Voltar para o índice](#capitulo12)**
+
+
+
+
 
 
 
