@@ -3335,6 +3335,13 @@ export default new Router({
 
 **[⬆ Voltar para o índice](#capitulo12)**
 
+<a id="router-links"></a>
+## Reagindo a Mudanças em Parâmetros de Rotas
+>Configurando Rotas Filhas (Rotas Aninhadas)
+
+
+**[⬆ Voltar para o índice](#capitulo12)**
+
 
 
 
