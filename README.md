@@ -3201,7 +3201,9 @@ Vue.use({
 ## Instalação do vue-router
 `npm i --save vue-router@3.0.2 -E`
 
->Flag -E é para instalar exatamente essa versão.
+>Flag -E é para in
+
+stalar exatamente essa versão.
 **[⬆ Voltar para o índice](#capitulo12)**
 
 <a id="duasrotas"></a>
@@ -3306,6 +3308,30 @@ export default {
   this.$route.params.id
 ```
 
+> Quando existe mudança para componentes do mesmo tipo, é melhor usar a propriedade watch para monitorar a mudança de $roue e aconteça a mudança do parâmetro:
+ ```html
+   watch:{
+        $route(to, from){
+            this.id = to.params.id
+        }
+    }
+```
+> Existe uma forma mais simples que é usando propriedade, no componente coloque **props** com o nome do parâmetro passado na url e na instância router,
+Defina props como true, pronto, agora não precisa usar data e nem watch para monitor as mudanças dos parâmetros:
+
+```html
+export default new Router({
+    mode: 'history',
+    routes: [{
+        path: '/',
+        component: Inicio
+    }, {
+        path: '/usuario/:id',
+        component: Usuario,
+        props: true
+    }]
+})
+```
 
 **[⬆ Voltar para o índice](#capitulo12)**
 
