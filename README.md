@@ -1,4 +1,4 @@
-# Curso-Vue-Completo
+# Curso-Vue-Completo (Manual do vue)
 Esse manual foi feito por mim com base no curso da Udemy:
 > [Curso completo da udemy](https://www.udemy.com/course/vue-js-completo/). :mortar_board:
 
